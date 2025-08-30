@@ -11,7 +11,7 @@ export const DATA = {
     "I am a software engineer with 3 years of experience in the field of UI/UX designer and front-end developer.",
   summary:
     "At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, [I pursued a double degree in computer science and business](/#education), [interned at big tech companies in Silicon Valley](https://www.youtube.com/watch?v=d-LJ2e5qKdE), and [competed in over 21 hackathons for fun](/#hackathons). I also had the pleasure of being a part of the first ever in-person cohort of buildspace called [buildspace sf1](https://buildspace.so/sf1).",
-  avatarUrl: "/me.jpg",
+  avatarUrl: "/me.JPG",
   skills: [
     "React",
     "Next.js",
