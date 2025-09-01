@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { AuroraText } from "@/components/magicui/aurora-text";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -17,15 +18,14 @@ export default function Page() {
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
-            <div className="flex-col flex flex-1 space-y-1.5">
+            <div className="flex-col flex flex-1 space-y-5">
+              <BlurFadeText delay={BLUR_FADE_DELAY}>
+                <AuroraText className="text-6xl font-extrabold tracking-tight">
+                  Muhammad <br /> iqbal Asqalani
+                </AuroraText>
+              </BlurFadeText>
               <BlurFadeText
-                delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-                yOffset={8}
-                text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
-              />
-              <BlurFadeText
-                className="max-w-[600px] md:text-xl"
+                className="text-x1"
                 delay={BLUR_FADE_DELAY}
                 text={DATA.description}
               />
@@ -39,7 +39,9 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section id="about">
+      <section
+        id="about"
+        className="rounded-xl p-6 bg-white shadow-lg dark:bg-gray-900">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">About</h2>
         </BlurFade>
@@ -49,6 +51,7 @@ export default function Page() {
           </Markdown>
         </BlurFade>
       </section>
+
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>

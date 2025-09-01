@@ -2,23 +2,23 @@
 
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion, Variants } from "framer-motion";
-import { useMemo } from "react";
+import { useMemo, ReactNode } from "react";
 
 interface BlurFadeTextProps {
-  text: string;
+  text?: string; // optional
+  children?: ReactNode; // now supported
   className?: string;
-  variant?: {
-    hidden: { y: number };
-    visible: { y: number };
-  };
+  delay?: number;
+  variant?: Variants;
   duration?: number;
   characterDelay?: number;
-  delay?: number;
   yOffset?: number;
   animateByCharacter?: boolean;
 }
+
 const BlurFadeText = ({
   text,
+  children,
   className,
   variant,
   characterDelay = 0.03,
@@ -28,12 +28,14 @@ const BlurFadeText = ({
 }: BlurFadeTextProps) => {
   const defaultVariants: Variants = {
     hidden: { y: yOffset, opacity: 0, filter: "blur(8px)" },
-    visible: { y: -yOffset, opacity: 1, filter: "blur(0px)" },
+    visible: { y: 0, opacity: 1, filter: "blur(0px)" }, // fix agar tidak naik turun
   };
-  const combinedVariants = variant || defaultVariants;
-  const characters = useMemo(() => Array.from(text), [text]);
 
-  if (animateByCharacter) {
+  const combinedVariants = variant || defaultVariants;
+  const characters = text ? useMemo(() => Array.from(text), [text]) : [];
+
+  // ✅ Jika animateByCharacter dan text ada → animasi per huruf
+  if (animateByCharacter && text) {
     return (
       <div className="flex">
         <AnimatePresence>
@@ -45,12 +47,11 @@ const BlurFadeText = ({
               exit="hidden"
               variants={combinedVariants}
               transition={{
-                yoyo: Infinity,
                 delay: delay + i * characterDelay,
                 ease: "easeOut",
               }}
               className={cn("inline-block", className)}
-              style={{ width: char.trim() === "" ? "0.2em" : "auto" }}
+              style={{ width: char.trim() === "" ? "0.25em" : "auto" }}
             >
               {char}
             </motion.span>
@@ -60,25 +61,23 @@ const BlurFadeText = ({
     );
   }
 
+  // ✅ Jika children → render children dengan animasi
   return (
-    <div className="flex">
-      <AnimatePresence>
-        <motion.span
-          initial="hidden"
-          animate="visible"
-          exit="hidden"
-          variants={combinedVariants}
-          transition={{
-            yoyo: Infinity,
-            delay,
-            ease: "easeOut",
-          }}
-          className={cn("inline-block", className)}
-        >
-          {text}
-        </motion.span>
-      </AnimatePresence>
-    </div>
+    <AnimatePresence>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+        variants={combinedVariants}
+        transition={{
+          delay,
+          ease: "easeOut",
+        }}
+        className={cn("inline-block", className)}
+      >
+        {children || text}
+      </motion.div>
+    </AnimatePresence>
   );
 };
 
