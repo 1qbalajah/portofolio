@@ -21,6 +21,7 @@ interface BlurFadeTextProps {
 
 const BlurFadeText = ({
   text,
+  children,
   className,
   variant,
   characterDelay = 0.03,
@@ -35,13 +36,12 @@ const BlurFadeText = ({
 
   const combinedVariants = variant || defaultVariants;
 
-  // ✅ Hooks selalu di luar kondisi
-  const characters = useMemo(() => Array.from(text), [text]);
+  const characters = useMemo(() => Array.from(text || ""), [text]);
 
   return (
     <div className="flex">
       <AnimatePresence>
-        {animateByCharacter ? (
+        {animateByCharacter && text ? (
           characters.map((char, i) => (
             <motion.span
               key={i}
@@ -71,7 +71,7 @@ const BlurFadeText = ({
             }}
             className={cn("inline-block", className)}
           >
-            {text}
+            {children || text}
           </motion.span>
         )}
       </AnimatePresence>
