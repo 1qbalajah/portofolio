@@ -32,8 +32,7 @@ const BlurFadeText = ({
   };
 
   const combinedVariants = variant || defaultVariants;
-  const characters = text ? useMemo(() => Array.from(text), [text]) : [];
-
+  const characters = useMemo(() => Array.from(text), [text]);
   // ✅ Jika animateByCharacter dan text ada → animasi per huruf
   if (animateByCharacter && text) {
     return (
