@@ -2,14 +2,16 @@
 
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion, Variants } from "framer-motion";
-import { useMemo, ReactNode } from "react";
+import { useMemo } from "react";
 
 interface BlurFadeTextProps {
-  text?: string; // optional
-  children?: ReactNode; // now supported
+  text: string;
   className?: string;
   delay?: number;
-  variant?: Variants;
+  variant?: {
+    hidden: { y: number };
+    visible: { y: number };
+  };
   duration?: number;
   characterDelay?: number;
   yOffset?: number;
@@ -18,7 +20,6 @@ interface BlurFadeTextProps {
 
 const BlurFadeText = ({
   text,
-  children,
   className,
   variant,
   characterDelay = 0.03,
@@ -28,17 +29,19 @@ const BlurFadeText = ({
 }: BlurFadeTextProps) => {
   const defaultVariants: Variants = {
     hidden: { y: yOffset, opacity: 0, filter: "blur(8px)" },
-    visible: { y: 0, opacity: 1, filter: "blur(0px)" }, // fix agar tidak naik turun
+    visible: { y: -yOffset, opacity: 1, filter: "blur(0px)" },
   };
 
   const combinedVariants = variant || defaultVariants;
+
+  // ✅ Hooks selalu di luar kondisi
   const characters = useMemo(() => Array.from(text), [text]);
-  // ✅ Jika animateByCharacter dan text ada → animasi per huruf
-  if (animateByCharacter && text) {
-    return (
-      <div className="flex">
-        <AnimatePresence>
-          {characters.map((char, i) => (
+
+  return (
+    <div className="flex">
+      <AnimatePresence>
+        {animateByCharacter ? (
+          characters.map((char, i) => (
             <motion.span
               key={i}
               initial="hidden"
@@ -50,33 +53,28 @@ const BlurFadeText = ({
                 ease: "easeOut",
               }}
               className={cn("inline-block", className)}
-              style={{ width: char.trim() === "" ? "0.25em" : "auto" }}
+              style={{ width: char.trim() === "" ? "0.2em" : "auto" }}
             >
               {char}
             </motion.span>
-          ))}
-        </AnimatePresence>
-      </div>
-    );
-  }
-
-  // ✅ Jika children → render children dengan animasi
-  return (
-    <AnimatePresence>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        exit="hidden"
-        variants={combinedVariants}
-        transition={{
-          delay,
-          ease: "easeOut",
-        }}
-        className={cn("inline-block", className)}
-      >
-        {children || text}
-      </motion.div>
-    </AnimatePresence>
+          ))
+        ) : (
+          <motion.span
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={combinedVariants}
+            transition={{
+              delay,
+              ease: "easeOut",
+            }}
+            className={cn("inline-block", className)}
+          >
+            {text}
+          </motion.span>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 
