@@ -15,8 +15,9 @@ export function OrganizationSection() {
               Achievements & Certifications
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Work Experience
+              Proof of My Skills & Dedication
             </h2>
+            <p>These certifications and achievements represent my dedication to continuous learning, skill development, and real-world problem solving.</p>
           </div>
         </div>
       </BlurFade>
