@@ -5,6 +5,10 @@ import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
+import { ThemeParticles } from "@/components/ThemeParticles";
+// Assuming smooth-cursor was installed properly, if not this will error.
+// We will wrap the app with it or just add it globally.
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -57,13 +61,19 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
+          "min-h-screen bg-background font-sans antialiased",
           fontSans.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <SmoothCursor />
+        <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={0}>
-            {children}
+            <ThemeParticles />
+            {/* Smooth Cursor - uncomment if fully supported/installed */}
+            {/* <SmoothCursor /> */}
+            <div className="relative z-10 mx-auto w-full max-w-7xl px-4 md:px-8 py-12 sm:py-24">
+              {children}
+            </div>
             <Navbar />
           </TooltipProvider>
         </ThemeProvider>
