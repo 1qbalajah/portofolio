@@ -30,12 +30,13 @@ const FALLBACK_STYLES = `
 }
 
 @media (prefers-reduced-motion: reduce) {
-  [data-retro-grid-scroll="true"] {
+  [data-retro-grid-scroll=true] {
     animation: none !important;
     transform: translateY(-50%) !important;
   }
 }
 `
+
 
 const VERTEX_SHADER_SOURCE = `
 attribute vec2 a_position;

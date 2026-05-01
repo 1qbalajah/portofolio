@@ -2,7 +2,6 @@
 
 import React from "react";
 import { AuroraText } from "@/components/ui/aurora-text";
-import { TypingAnimation } from "@/components/ui/typing-animation";
 import { ProfileCard } from "@/components/ProfileCard";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
@@ -10,35 +9,45 @@ import { Button } from "@/components/ui/button";
 import BlurFade from "@/components/magicui/blur-fade";
 import { Highlight } from "@/components/ui/highlight";
 import { DownloadIcon, ArrowRightIcon } from "lucide-react";
+import TextType from "@/components/TextType";
+import { Meteors } from "@/components/ui/meteors";
 
 export function HeroSection() {
   return (
     <section
       id="hero"
-      className="min-h-[85vh] flex items-center justify-center pb-12"
+      className="relative isolate flex min-h-[85vh] items-center justify-center overflow-hidden pb-12"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
-        {/* Left Column */}
-        <div className="flex flex-col space-y-6 text-center lg:text-left items-center lg:items-start">
+
+      <div className="relative z-10 grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-2">
+  <Meteors />
+        <div className="flex flex-col items-center space-y-6 text-center lg:items-start lg:text-left">
           <BlurFade delay={0.1}>
-            <div className="text-2xl font-semibold text-muted-foreground flex items-center justify-center lg:justify-start gap-2 h-8">
-              <TypingAnimation
-                duration={150}
-                className="text-2xl"
-              >
-                Hello こんにちは 你好
-              </TypingAnimation>
+            <div className="flex h-8 items-center justify-center gap-2 text-2xl font-semibold text-muted-foreground lg:justify-start">
+              <TextType
+                text={[
+                  "Welcome to my portfolio",
+                  "Front-end Developer",
+                  "UI/UX Designer",
+                ]}
+                typingSpeed={75}
+                pauseDuration={1500}
+                showCursor
+                cursorCharacter="_"
+                deletingSpeed={50}
+                cursorBlinkDuration={0.5}
+              />
             </div>
           </BlurFade>
 
           <BlurFade delay={0.2}>
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter">
+            <h1 className="text-5xl font-extrabold tracking-tighter md:text-7xl">
               <AuroraText>{DATA.name}</AuroraText>
             </h1>
           </BlurFade>
 
           <BlurFade delay={0.3}>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-[600px] leading-relaxed mt-4">
+            <p className="mt-4 max-w-[600px] text-lg leading-relaxed text-muted-foreground md:text-xl">
               <Highlight className="text-foreground">
                 {DATA.description}
               </Highlight>
@@ -53,7 +62,13 @@ export function HeroSection() {
                   Download CV <DownloadIcon className="ml-2 size-4" />
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full">
+
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="rounded-full"
+              >
                 <Link href="#projects">
                   View Projects <ArrowRightIcon className="ml-2 size-4" />
                 </Link>

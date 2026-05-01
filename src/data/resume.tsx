@@ -1,5 +1,11 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon, FolderIcon, TrophyIcon, UserIcon } from "lucide-react";
+import {
+  HomeIcon,
+  NotebookIcon,
+  FolderIcon,
+  TrophyIcon,
+  UserIcon,
+} from "lucide-react";
 
 export const DATA = {
   name: "Muhammad Iqbal Asqalani",
@@ -7,23 +13,34 @@ export const DATA = {
   url: "https://iqbal-portofolio.vercel.app", // Adjust if needed
   subtitle: "GoodBoy",
   sosmed: "@_nglbal",
-  description:
-    "Student developers",
+  description: "Student developers",
   desc: " who are able to build digital solutions. Actively contribute to school organizations and projects",
   about:
     "Halo! Saya Muhammad Iqbal Asqalani, seorang UI/UX Designer dan Front-end Developer yang selalu bersemangat menciptakan pengalaman digital yang menarik dan fungsional. Berkat dedikasi dan kerja keras, saya terus mengasah keterampilan saya dalam desain antarmuka dan pengembangan web modern.",
   avatarUrl: "/me.JPG", // Ensure this image exists in public folder
   skills: [
-    "React",
-    "Next.js",
-    "Typescript",
-    "Tailwind CSS",
-    "Figma",
-    "Framer Motion",
-    "Node.js",
-    "Postgres",
-    "Magic UI",
-    "UI/UX Design",
+    { name: "Javascript", icon: "https://cdn.simpleicons.org/javascript" },
+    { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
+    { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+    { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/61DAFB" },
+    {
+      name: "Typescript",
+      icon: "https://cdn.simpleicons.org/typescript/3178C6",
+    },
+    {
+      name: "Tailwind CSS",
+      icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4",
+    },
+    { name: "MySQL", icon: "https://cdn.simpleicons.org/mysql/4169E1" },
+    {
+      name: "Vercel",
+      icon: {
+        light: "https://cdn.simpleicons.org/vercel/000000",
+        dark: "https://cdn.simpleicons.org/vercel/FFFFFF",
+      },
+    },
+    { name: "Figma", icon: "https://cdn.simpleicons.org/figma/F24E1E" },
+    { name: "Canva", icon: "https://img.icons8.com/fluency/48/canva.png" },
   ],
   navbar: [
     { href: "#hero", icon: HomeIcon, label: "Home" },
@@ -55,26 +72,26 @@ export const DATA = {
     },
   },
 
-  organization: [
+  experience: [
     {
-      organization: "OSIS",
+      experience: "OSIS",
       href: "#",
       badges: [],
       location: "School",
       role: "Ketua Seksi Kewirausahaan",
-      logoUrl: "/osis.png", // Ensure logo exists
+      logoUrl: "/osis.png", 
       start: "2020",
       end: "2021",
       description:
         "Memimpin divisi kewirausahaan di organisasi sekolah, merencanakan dan mengeksekusi program-program wirausaha untuk siswa.",
     },
     {
-      organization: "Programming Club",
+      experience: "Programming Club",
       href: "#",
       badges: [],
       location: "School",
       role: "Member",
-      logoUrl: "/club.png", // Ensure logo exists
+      logoUrl: "/club.png", 
       start: "2023",
       end: "Present",
       description:
@@ -89,7 +106,8 @@ export const DATA = {
       logoUrl: "/BAZMA.png",
       start: "2023",
       end: "2027",
-      description: "Fokus pada rekayasa perangkat lunak dan pengembangan desain antarmuka pengguna.",
+      description:
+        "Fokus pada rekayasa perangkat lunak dan pengembangan desain antarmuka pengguna.",
     },
   ],
   projects: [
@@ -153,10 +171,22 @@ export const DATA = {
         },
       ],
     },
+
+    {
+      title: "Dicoding: Front-End Web Developer",
+      issuer: "Dicoding Indonesia",
+      dates: "2024",
+      description:
+        "Sertifikasi kompetensi dalam pengembangan front-end menggunakan standar web modern.",
+      image: "/cert-dicoding.png",
+      links: [
+        {
+          title: "View Certificate",
+          icon: <Icons.globe className="h-4 w-4" />,
+          href: "#",
+        },
+      ],
+    },
   ],
-  gallery: [
-    "/BEST.png",
-    "/Design.png",
-    "/4BYTE.jpg",
-  ],
+  gallery: ["/BEST.png", "/Design.png", "/4BYTE.jpg"],
 } as const;
