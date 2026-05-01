@@ -69,9 +69,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={0}>
             <ThemeParticles />
-            {/* Smooth Cursor - uncomment if fully supported/installed */}
-            {/* <SmoothCursor /> */}
-            <div className="relative z-10 mx-auto w-full max-w-7xl px-4 md:px-8 py-12 sm:py-24">
+            <div className="relative mx-auto w-full max-w-7xl px-4 md:px-8 py-12 sm:py-24">
               {children}
             </div>
             <Navbar />

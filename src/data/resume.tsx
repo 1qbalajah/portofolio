@@ -12,11 +12,27 @@ export const DATA = {
   initials: "MIA",
   url: "https://iqbal-portofolio.vercel.app", // Adjust if needed
   subtitle: "GoodBoy",
-  sosmed: "@_nglbal",
+  sosmed: {
+    instagram: {
+      name: "Instagram",
+      username: "@_nglbal",
+      url: "https://instagram.com/_nglbal",
+    },
+    github: {
+      name: "GitHub",
+      username: "1qbalajah",
+      url: "https://github.com/1qbalajah",
+    },
+    linkedin: {
+      name: "LinkedIn",
+      username: "muhammad-iqbal",
+      url: "https://www.linkedin.com/in/iqbal-asqalani-3b689b312/",
+    },
+  },
   description: "Student developers",
-  desc: " who are able to build digital solutions. Actively contribute to school organizations and projects",
+  desc: " focused on building practical digital solutions, with active contributions to school organizations, collaborative projects, and real-world product development.",
   about:
-    "Halo! Saya Muhammad Iqbal Asqalani, seorang UI/UX Designer dan Front-end Developer yang selalu bersemangat menciptakan pengalaman digital yang menarik dan fungsional. Berkat dedikasi dan kerja keras, saya terus mengasah keterampilan saya dalam desain antarmuka dan pengembangan web modern.",
+    "As a vocational high school student in Information Technology, I focus on UI/UX design and front-end development to create digital interfaces that are engaging, functional, and user-friendly. Through school projects, organizational involvement, and independent exploration, I continue to improve my skills in interface design, modern web development, and practical digital solutions. I am committed to continuous growth and contributing my best to every team, organization, and project I take part in.",
   avatarUrl: "/me.JPG", // Ensure this image exists in public folder
   skills: [
     { name: "Javascript", icon: "https://cdn.simpleicons.org/javascript" },
@@ -78,50 +94,50 @@ export const DATA = {
       href: "#",
       badges: [],
       location: "School",
-      role: "Ketua Seksi Kewirausahaan",
-      logoUrl: "/osis.png", 
-      start: "2020",
-      end: "2021",
+      role: "entrepreneurship",
+      logoUrl: "/osis.png",
+      start: "August 2024",
+      end: "October 2025",
       description:
-        "Memimpin divisi kewirausahaan di organisasi sekolah, merencanakan dan mengeksekusi program-program wirausaha untuk siswa.",
+        "Contributed as a member of the Entrepreneurship Division by supporting school business initiatives, assisting in planning and executing student entrepreneurship programs, and helping manage activities that encouraged creativity, teamwork, and practical business skills.",
     },
     {
-      experience: "Programming Club",
+      experience: "Development Team",
       href: "#",
       badges: [],
       location: "School",
       role: "Member",
-      logoUrl: "/club.png", 
-      start: "2023",
+      logoUrl: "/best.png",
+      start: "May 2025",
       end: "Present",
       description:
-        "Aktif dalam pengembangan perangkat lunak dan desain UI/UX bersama anggota klub lainnya.",
+        "Developed and maintained the school’s main website to provide accessible information, improve digital communication, and support the school’s online presence. Contributed to building responsive pages, organizing content, and ensuring a user-friendly experience for students, teachers, and visitors.",
     },
   ],
   education: [
     {
       school: "SMK TI BAZMA",
-      href: "https://smktibazma.sch.id",
       degree: "Vocational High School (Software Engineering)",
       logoUrl: "/BAZMA.png",
       start: "2023",
       end: "2027",
       description:
-        "Fokus pada rekayasa perangkat lunak dan pengembangan desain antarmuka pengguna.",
+        "Focus on software engineering and user interface design development.",
     },
   ],
   projects: [
     {
       title: "BEST",
       href: "https://best.smktibazma.com/",
-      dates: "May 2024 - Present",
+      dates: "May 2025 - June 2025",
       active: true,
       description:
-        "BEST adalah platform digital yang memudahkan alumni dan siswa SMK TI BAZMA untuk menampilkan portofolio mereka secara online.",
+        "BEST is a digital platform that makes it easy for alumni and students of SMK TI BAZMA to display their portfolios online.",
       technologies: [
+        "Figma",
+        "Canva",
         "Typescript",
-        "MYSQL",
-        "React.js",
+        "Next.js",
         "TailwindCSS",
         "Figma",
         "Express.js",
@@ -133,36 +149,112 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/BEST.png",
+      image: "/BEST-bg.png",
       video: "",
     },
     {
-      title: "UI/UX Design Portfolio",
-      href: "#",
+      title: "SMK TI BAZMA",
+      href: "https://smktibazma.sch.id/",
       dates: "2024",
       active: true,
       description:
-        "Berbagai eksplorasi desain UI/UX untuk mobile app dan website menggunakan Figma.",
-      technologies: ["Figma", "UI/UX", "Prototyping"],
+        "A school website developed to provide clear information, improve digital communication, and support the school’s online presence for students, teachers, and visitors.",
+      technologies: ["Figma", "Canva", "Next.js", "Typescript", "Tailwind"],
       links: [
         {
           type: "Dribbble",
-          href: "#",
+          href: "https://smktibazma.sch.id/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/Design.png",
+      image: "/SMKTIBAZMA-bg.png",
+      video: "",
+    },
+
+    {
+      title: "HIMPANA",
+      href: "https://himpana.com/",
+      dates: "2024",
+      active: true,
+      description:
+        "HIMPANA is a digital platform for the Pertamina retirees community, designed to connect registered members through an integrated digital ID card system and support easier access to community information and activities.",
+      technologies: ["Figma", "Canva", "Next.js", "Typescript"],
+      links: [
+        {
+          type: "Dribbble",
+          href: "https://himpana.com/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/HIMPANA-bg.png",
+      video: "",
+    },
+
+    {
+      title: "JAJANIN",
+      href: "https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin?node-id=52-44&p=f&t=m8qPHTeANfCTEWyG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1106%3A5765&show-proto-sidebar=1",
+      dates: "2024",
+      active: true,
+      description:
+        "An online e-commerce app that helps students learn how to sell products, manage transactions, and earn profit while providing a platform to promote Indonesian student-made culinary products.",
+      technologies: ["Figma", "Canva"],
+      links: [
+        {
+          type: "Dribbble",
+          href: "https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin?node-id=52-44&p=f&t=m8qPHTeANfCTEWyG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1106%3A5765&show-proto-sidebar=1",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/HIMPANA-bg.png",
+      video: "",
+    },
+
+    {
+      title: "Sinergi",
+      href: "https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin?node-id=52-44&p=f&t=m8qPHTeANfCTEWyG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1106%3A5765&show-proto-sidebar=1",
+      dates: "2024",
+      active: true,
+      description:
+        "SINERGI is a Pertamina community platform that brings internal groups into one centralized hub, making it easier for members to discover communities, communicate, and stay engaged.",
+      technologies: ["Figma", "Canva"],
+      links: [
+        {
+          type: "Dribbble",
+          href: "https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin?node-id=52-44&p=f&t=m8qPHTeANfCTEWyG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1106%3A5765&show-proto-sidebar=1",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/HIMPANA-bg.png",
+      video: "",
+    },
+
+    {
+      title: "KajianQU",
+      href: "https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin?node-id=52-44&p=f&t=m8qPHTeANfCTEWyG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1106%3A5765&show-proto-sidebar=1",
+      dates: "2024",
+      active: true,
+      description:
+        "Developed a Qur’an learning mobile app (KajianQu) with AI-powered features for recitation correction and memorization (hafalan) submission, helping users improve accuracy and consistency in learning.",
+      technologies: ["Figma", "Canva"],
+      links: [
+        {
+          type: "Dribbble",
+          href: "https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin?node-id=52-44&p=f&t=m8qPHTeANfCTEWyG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1106%3A5765&show-proto-sidebar=1",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/HIMPANA-bg.png",
       video: "",
     },
   ],
   certificates: [
     {
-      title: "Dicoding: Front-End Web Developer",
-      issuer: "Dicoding Indonesia",
-      dates: "2024",
+      title: "ASEAN Data Science Explorers",
+      issuer: "SAP Analytics Cloud",
+      dates: "Nov 2025",
       description:
-        "Sertifikasi kompetensi dalam pengembangan front-end menggunakan standar web modern.",
-      image: "/cert-dicoding.png",
+        "Data Science certification focuses on processing data—from cleaning and analyzing to visualizing—to turn raw data into meaningful insights for decision-making.",
+      image: "/JHIC.png",
       links: [
         {
           title: "View Certificate",
@@ -173,12 +265,12 @@ export const DATA = {
     },
 
     {
-      title: "Dicoding: Front-End Web Developer",
-      issuer: "Dicoding Indonesia",
-      dates: "2024",
+      title: "Semi Finalist",
+      issuer: "Jagoan Hosting Infra Competition",
+      dates: "Nov 2025",
       description:
-        "Sertifikasi kompetensi dalam pengembangan front-end menggunakan standar web modern.",
-      image: "/cert-dicoding.png",
+        "Web Development Semi-Finalist certification recognizes achievement in building and presenting web projects, demonstrating strong skills in coding, problem-solving, and UI/UX design.",
+      image: "/JHIC.png",
       links: [
         {
           title: "View Certificate",
@@ -188,5 +280,12 @@ export const DATA = {
       ],
     },
   ],
-  gallery: ["/BEST.png", "/Design.png", "/4BYTE.jpg"],
+  gallery: [
+      { image: "/gambar1.jpeg" },
+      { image: "/gambar2.jpeg" },
+      { image: "/gambar3.png" },
+      { image: "/gambar4.png" },
+      { image: "/gambar5.png" },
+      { image: "/gambar6.png" },
+  ],
 } as const;
