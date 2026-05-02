@@ -272,7 +272,7 @@ export const DATA = {
       dates: "Nov 2025",
       description:
         "Web Development Semi-Finalist certification recognizes achievement in building and presenting web projects, demonstrating strong skills in coding, problem-solving, and UI/UX design.",
-      image: "/JHIC.png",
+      image: "/sap.png",
       links: [
         {
           title: "View Certificate",
