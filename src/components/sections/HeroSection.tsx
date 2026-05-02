@@ -103,7 +103,7 @@ export function HeroSection() {
           <BlurFade delay={0.4}>
             <div className="flex gap-4 pt-4">
               <Button asChild size="lg" className="rounded-full">
-                <a href="/cv.pdf" target="_blank" rel="noreferrer">
+                <a href="/pdf/CV.pdf" download>
                   Download CV
                   <DownloadIcon className="ml-2 size-4" />
                 </a>
@@ -130,7 +130,7 @@ export function HeroSection() {
             handle="_nglbal"
             status="Online"
             contactText="Contact Me"
-            avatarUrl="/ibenk.png"
+            avatarUrl="/iqbal.JPG"
             showUserInfo
             enableTilt
             onContactClick={() => {
