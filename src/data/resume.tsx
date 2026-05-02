@@ -9,6 +9,8 @@ import {
 
 export const DATA = {
   name: "Muhammad Iqbal Asqalani",
+  initials: "MIA",
+  url: "https://iqbal-portofolio.vercel.app", // Adjust if needed
   subtitle: "GoodBoy",
   sosmed: {
     instagram: {
