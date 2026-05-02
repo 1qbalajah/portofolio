@@ -9,8 +9,6 @@ import {
 
 export const DATA = {
   name: "Muhammad Iqbal Asqalani",
-  initials: "MIA",
-  url: "https://iqbal-portofolio.vercel.app", // Adjust if needed
   subtitle: "GoodBoy",
   sosmed: {
     instagram: {
@@ -194,7 +192,7 @@ export const DATA = {
 
     {
       title: "Sinergi",
-      href: "https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin?node-id=52-44&p=f&t=m8qPHTeANfCTEWyG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1106%3A5765&show-proto-sidebar=1",
+      href: "https://www.figma.com/proto/dnVSPyd2FpipnCzA77ORV5/SINERGI?node-id=366-828&p=f&t=P4WpOTDAaIxa6mut-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1",
       dates: "Dec 2025",
       active: true,
       description:
@@ -203,7 +201,7 @@ export const DATA = {
       links: [
         {
           type: "Dribbble",
-          href: "https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin?node-id=52-44&p=f&t=m8qPHTeANfCTEWyG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1106%3A5765&show-proto-sidebar=1",
+          href: "https://www.figma.com/proto/dnVSPyd2FpipnCzA77ORV5/SINERGI?node-id=366-828&p=f&t=P4WpOTDAaIxa6mut-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1",
           icon: <Icons.globe className="size-3" />,
         },
       ],
@@ -232,7 +230,7 @@ export const DATA = {
 
     {
       title: "KajianQU",
-      href: "https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin?node-id=52-44&p=f&t=m8qPHTeANfCTEWyG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1106%3A5765&show-proto-sidebar=1",
+      href: "https://www.figma.com/proto/cQEHbUb5EeWBz1SX7C0wJX/KajianKu?node-id=683-18987&p=f&t=YzM0mXSwJ9csTAd1-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=683%3A18987&show-proto-sidebar=1",
       dates: "Mar 2026",
       active: true,
       description:
@@ -241,7 +239,7 @@ export const DATA = {
       links: [
         {
           type: "Dribbble",
-          href: "https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin?node-id=52-44&p=f&t=m8qPHTeANfCTEWyG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1106%3A5765&show-proto-sidebar=1",
+          href: "https://www.figma.com/proto/cQEHbUb5EeWBz1SX7C0wJX/KajianKu?node-id=683-18987&p=f&t=YzM0mXSwJ9csTAd1-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=683%3A18987&show-proto-sidebar=1",
           icon: <Icons.globe className="size-3" />,
         },
       ],
