@@ -32,7 +32,9 @@ export const DATA = {
   description: "Student developers",
   desc: " focused on building practical digital solutions, with active contributions to school organizations, collaborative projects, and real-world product development.",
   about:
-    "As a vocational high school student in Information Technology, I focus on UI/UX design and front-end development to create digital interfaces that are engaging, functional, and user-friendly. Through school projects, organizational involvement, and independent exploration, I continue to improve my skills in interface design, modern web development, and practical digital solutions. I am committed to continuous growth and contributing my best to every team, organization, and project I take part in.",
+    "As a vocational high school student in Information Technology, I focus on ",
+  about1: "UI/UX design and front-end development",
+  about2: "to create digital interfaces that are engaging, functional, and user-friendly. Through school projects, organizational involvement, and independent exploration, I continue to improve my skills in interface design, modern web development, and practical digital solutions. I am committed to continuous growth and contributing my best to every team, organization, and project I take part in.",
   avatarUrl: "/me.JPG", // Ensure this image exists in public folder
   skills: [
     { name: "Javascript", icon: "https://cdn.simpleicons.org/javascript" },
@@ -129,7 +131,7 @@ export const DATA = {
     {
       title: "BEST",
       href: "https://best.smktibazma.com/",
-      dates: "May 2025 - June 2025",
+      dates: "July 2025",
       active: true,
       description:
         "BEST is a digital platform that makes it easy for alumni and students of SMK TI BAZMA to display their portfolios online.",
@@ -149,13 +151,13 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/BEST-bg.png",
+      image: "/P-BEST.png",
       video: "",
     },
     {
       title: "SMK TI BAZMA",
       href: "https://smktibazma.sch.id/",
-      dates: "2024",
+      dates: "Aug 2025",
       active: true,
       description:
         "A school website developed to provide clear information, improve digital communication, and support the school’s online presence for students, teachers, and visitors.",
@@ -167,14 +169,14 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/SMKTIBAZMA-bg.png",
+      image: "/P-SMKTIBAZMA.png",
       video: "",
     },
 
     {
       title: "HIMPANA",
       href: "https://himpana.com/",
-      dates: "2024",
+      dates: "Oct 2025",
       active: true,
       description:
         "HIMPANA is a digital platform for the Pertamina retirees community, designed to connect registered members through an integrated digital ID card system and support easier access to community information and activities.",
@@ -186,33 +188,14 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/HIMPANA-bg.png",
-      video: "",
-    },
-
-    {
-      title: "JAJANIN",
-      href: "https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin?node-id=52-44&p=f&t=m8qPHTeANfCTEWyG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1106%3A5765&show-proto-sidebar=1",
-      dates: "2024",
-      active: true,
-      description:
-        "An online e-commerce app that helps students learn how to sell products, manage transactions, and earn profit while providing a platform to promote Indonesian student-made culinary products.",
-      technologies: ["Figma", "Canva"],
-      links: [
-        {
-          type: "Dribbble",
-          href: "https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin?node-id=52-44&p=f&t=m8qPHTeANfCTEWyG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1106%3A5765&show-proto-sidebar=1",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/HIMPANA-bg.png",
+      image: "/P-HIMPANA.png",
       video: "",
     },
 
     {
       title: "Sinergi",
       href: "https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin?node-id=52-44&p=f&t=m8qPHTeANfCTEWyG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1106%3A5765&show-proto-sidebar=1",
-      dates: "2024",
+      dates: "Dec 2025",
       active: true,
       description:
         "SINERGI is a Pertamina community platform that brings internal groups into one centralized hub, making it easier for members to discover communities, communicate, and stay engaged.",
@@ -224,14 +207,33 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/HIMPANA-bg.png",
+      image: "/P-SINERGI.png",
+      video: "",
+    },
+
+        {
+      title: "JAJANIN",
+      href: "https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin?node-id=52-44&p=f&t=m8qPHTeANfCTEWyG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1106%3A5765&show-proto-sidebar=1",
+      dates: "Feb 2026",
+      active: true,
+      description:
+        "An online e-commerce app that helps students learn how to sell products, manage transactions, and earn profit while providing a platform to promote Indonesian student-made culinary products.",
+      technologies: ["Figma", "Canva"],
+      links: [
+        {
+          type: "Dribbble",
+          href: "https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin?node-id=52-44&p=f&t=m8qPHTeANfCTEWyG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1106%3A5765&show-proto-sidebar=1",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/P-JAJANIN.png",
       video: "",
     },
 
     {
       title: "KajianQU",
       href: "https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin?node-id=52-44&p=f&t=m8qPHTeANfCTEWyG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1106%3A5765&show-proto-sidebar=1",
-      dates: "2024",
+      dates: "Mar 2026",
       active: true,
       description:
         "Developed a Qur’an learning mobile app (KajianQu) with AI-powered features for recitation correction and memorization (hafalan) submission, helping users improve accuracy and consistency in learning.",
@@ -243,7 +245,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/HIMPANA-bg.png",
+      image: "/P-KAJIANQU.png",
       video: "",
     },
   ],

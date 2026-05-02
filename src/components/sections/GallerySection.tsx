@@ -30,7 +30,6 @@ export function GallerySection() {
         <div className="relative left-1/2 h-[600px] w-screen -translate-x-1/2">
           <CircularGallery
             bend={1}
-            textColor="#ffffff"
             borderRadius={0.05}
             scrollSpeed={2}
             scrollEase={0.05}

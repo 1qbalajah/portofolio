@@ -4,6 +4,7 @@ import React from "react";
 import BlurFade from "@/components/magicui/blur-fade";
 import { DATA } from "@/data/resume";
 import { motion } from "framer-motion";
+import { Highlight } from "@/components/ui/highlight";
 
 export function AboutSection() {
   return (
@@ -22,6 +23,10 @@ export function AboutSection() {
           <div className="relative h-full w-full rounded-[23px] bg-background/80 backdrop-blur-xl p-8 md:p-12 z-10">
             <p className="text-lg md:text-xl leading-relaxed text-muted-foreground text-center">
               {DATA.about}
+              <Highlight className="text-foreground">
+                {DATA.about1}
+              </Highlight>
+              {DATA.about2}
             </p>
           </div>
           {/* Animated glow background inside the border */}

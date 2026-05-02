@@ -23,8 +23,8 @@ export function ProjectsSection() {
             </h2>
 
             <p className="mx-auto max-w-[800px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              These projects showcase my skills and passion for creating impactful solutions.
-              solving.
+              These projects showcase my skills and passion for creating
+              impactful solutions. solving.
             </p>
           </div>
         </div>
@@ -46,14 +46,13 @@ export function ProjectsSection() {
   hover:border-blue-500/30
   hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)]
 "
-
               >
                 <div className="relative h-64 w-full overflow-hidden bg-muted/40">
                   {project.image ? (
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover object-top"
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center text-muted-foreground">
