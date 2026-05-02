@@ -369,6 +369,6 @@ export const DATA = {
     { image: '/gambar3.png' },
     { image: '/gambar4.png' },
     { image: '/gambar5.png' },
-    { image: '/gambar6.JPG' }
+    { image: '/gambar6.jpg' }
   ]
 } as const
