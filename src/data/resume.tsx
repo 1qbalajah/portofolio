@@ -79,7 +79,7 @@ export const DATA = {
       },
       LinkedIn: {
         name: 'LinkedIn',
-        url: 'https://linkedin.com/in/muhammad-iqbal',
+        url: 'https://www.linkedin.com/in/iqbal-asqalani-3b689b312/',
         icon: Icons.linkedin,
         navbar: true
       },
@@ -100,13 +100,13 @@ export const DATA = {
 
   experience: [
     {
-      experience: 'OSIS',
+      experience: 'Student Council SMK TI BAZMA',
       href: '#',
       badges: [],
       location: 'School',
-      role: 'entrepreneurship',
+      role: 'Entrepreneurship',
       logoUrl: '/osis.png',
-      start: 'August 2024',
+      start: 'October 2024',
       end: 'October 2025',
       description:
         'Collaborated with team members to coordinate tasks, ensuring clear communication and smooth execution of projects and events.'
@@ -121,33 +121,8 @@ export const DATA = {
       start: 'August 2024',
       end: 'October 2025',
       description:
-        'Manage the finances of a small-scale coffee business, including recording income and expenses, calculating capital and team member salaries. Develop copywriting skills for promotions and develop KPIs to improve team performance and business operational effectiveness.'
+        'Managing spending efficiency and profit optimization strategies through financial planning and operational cost evaluation, thus successfully increasing business profits by 300 thousand in less than one month.'
     },
-    {
-      experience: 'Developmet Team',
-      href: '#',
-      badges: [],
-      location: 'School',
-      role: 'UI/UX Designer & Frontend Developer',
-      logoUrl: '/best.png',
-      start: 'May 2025',
-      end: 'Present',
-      description:
-        'Contributed to the development of BEST (Bazma Excellent Showcase of Talent) and the SMK TI BAZMA Official Website, focusing on UI/UX design, accessibility, and information structure. For BEST, designed an intuitive learning flow and user-friendly interface to support consistent learning engagement. For the SMK TI BAZMA website, improved interface design and accessibility, resulting in better usability and a smoother experience for users.'
-    },
-        {
-      experience: 'HIMPANA',
-      href: '#',
-      badges: [],
-      location: 'School',
-      role: 'UI/UX Designer',
-      logoUrl: '/logo-himpana.png',
-      start: 'May 2025',
-      end: 'Present',
-      description:
-        'Contributed to the redesign and maintenance of the official HIMPANA website by enhancing UI/UX, optimizing user flow, and improving information architecture. These improvements led to a more intuitive navigation system, better accessibility, and a more efficient user experience for members and visitors.'
-    },
-    
   ],
   education: [
     {
@@ -167,16 +142,16 @@ export const DATA = {
       href: 'https://best.smktibazma.com/',
       dates: 'July 2025',
       active: true,
+      desc: 'Created a portfolio platform interface design ',
+      textbold: 'featuring 40+ student projects',
       description:
-        'BEST is a digital platform that makes it easy for alumni and students of SMK TI BAZMA to display their portfolios online.',
+        'to support connections with industry and collaborators, while improving project discoverability through a structured and user-friendly showcase experience.',
       technologies: [
         'Figma',
         'Canva',
         'Typescript',
         'Next.js',
-        'TailwindCSS',
-        'Figma',
-        'Express.js'
+        'TailwindCSS'
       ],
       links: [
         {
@@ -193,9 +168,11 @@ export const DATA = {
       href: 'https://smktibazma.sch.id/',
       dates: 'Aug 2025',
       active: true,
+      desc: 'Redesigning the official website of SMK TI Bazma with a more modern and structured interface through the integration of AI chatbots and a showcase feature for student work to showcase various projects that have been developed, until successfully achieving the ',
+      textbold: 'Top 30 position out of 300 school teams',
       description:
-        'A school website developed to provide clear information, improve digital communication, and support the school’s online presence for students, teachers, and visitors.',
-      technologies: ['Figma', 'Canva', 'Next.js', 'Typescript', 'Tailwind'],
+        'in the Infra Competition.',
+      technologies: ['Figma', 'Canva', 'Typescript', 'Next.js', 'TailwindCSS'],
       links: [
         {
           type: 'Dribbble',
@@ -212,9 +189,11 @@ export const DATA = {
       href: 'https://himpana.com/',
       dates: 'Oct 2025',
       active: true,
+      desc: 'Revived an old community website through UI/UX redesign by creating scalable user flows and interfaces, enabling a more efficient and ',
+      textbold: 'structured experience for 1,000+ users',
       description:
-        'HIMPANA is a digital platform for the Pertamina retirees community, designed to connect registered members through an integrated digital ID card system and support easier access to community information and activities.',
-      technologies: ['Figma', 'Canva', 'Next.js', 'Typescript'],
+        'while improving accessibility and overall user engagement.',
+      technologies: ['Figma', 'Canva', 'Typescript', 'Next.js'],
       links: [
         {
           type: 'Dribbble',
@@ -231,8 +210,10 @@ export const DATA = {
       href: 'https://www.figma.com/proto/dnVSPyd2FpipnCzA77ORV5/SINERGI?node-id=366-828&p=f&t=P4WpOTDAaIxa6mut-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1',
       dates: 'Dec 2025',
       active: true,
+      desc: 'Designed the UI/UX for SINERGI, a centralized community platform that ',
+      textbold: 'unifies multiple disconnected internal groups',
       description:
-        'SINERGI is a Pertamina community platform that brings internal groups into one centralized hub, making it easier for members to discover communities, communicate, and stay engaged.',
+        'into one accessible ecosystem, simplifying community discovery, communication, and member engagement across Pertamina communities.',
       technologies: ['Figma', 'Canva'],
       links: [
         {
@@ -250,8 +231,10 @@ export const DATA = {
       href: 'https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin?node-id=52-44&p=f&t=m8qPHTeANfCTEWyG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1106%3A5765&show-proto-sidebar=1',
       dates: 'Feb 2026',
       active: true,
+      desc: 'Leading end-to-end UI/UX design through user flow creation and interactive prototypes to achieve ',
+      textbold: "Top 10 Semifinalist",
       description:
-        'An online e-commerce app that helps students learn how to sell products, manage transactions, and earn profit while providing a platform to promote Indonesian student-made culinary products.',
+        'out of 50 teams in the WISE INNOVERA Competition, by delivering a scalable and user-centered platform that simplifies entrepreneurial learning and real-world sales experiences for students.',
       technologies: ['Figma', 'Canva'],
       links: [
         {
@@ -269,8 +252,10 @@ export const DATA = {
       href: 'https://www.figma.com/proto/cQEHbUb5EeWBz1SX7C0wJX/KajianKu?node-id=683-18987&p=f&t=YzM0mXSwJ9csTAd1-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=683%3A18987&show-proto-sidebar=1',
       dates: 'Mar 2026',
       active: true,
+      desc: '',
       description:
-        'Developed a Qur’an learning mobile app (KajianQu) with AI-powered features for recitation correction and memorization (hafalan) submission, helping users improve accuracy and consistency in learning.',
+        'by creating user flows and interactive prototypes to simplify the murojaah and memorization experience.',
+      textbold: "Led end-to-end UI/UX design",
       technologies: ['Figma', 'Canva'],
       links: [
         {
@@ -301,11 +286,11 @@ export const DATA = {
     },
 
     {
-      title: 'semi-finalist in school web digitalization',
+      title: 'National School Website Competition',
       issuer: 'Jagoan Hosting Infra Competition',
       dates: 'Nov 2025',
       description:
-        'Web Development Semi-Finalist certification recognizes achievement in building and presenting web projects, demonstrating strong skills in coding, problem-solving, and UI/UX design.',
+        'Achieved Semi-Finalist Certification for Website Redesign after competing against 300+ school teams across Indonesia, advancing to the top 30. and won 2nd Place – Best Video Impression category in the Infrastructure Competition.',
       image: '/JHIC.png',
       links: [
         {
@@ -317,11 +302,11 @@ export const DATA = {
     },
 
     {
-      title: 'Top 10 - UI/UX Competition',
+      title: 'National UI/UX Competition WISE INNOVERA',
       issuer: 'Widyatama University',
       dates: 'Feb 2026',
       description:
-        'Achieved Top 10 placement in a UI/UX design competition by developing a solution-focused product design, emphasizing user-centered thinking, usability, and interface clarity to address real user problems effectively.',
+        'Achieved top 10 position out of 50 school teams across Indonesia in UI/UX design competition by developing solution-focused product designs and emphasizing user-centered thinking, ease of use, and interface clarity to effectively solve real user problems.',
       image: '/Logo-Widyatama.png',
       links: [
         {
@@ -336,7 +321,7 @@ export const DATA = {
       issuer: 'Widyatama University',
       dates: 'Feb 2026',
       description:
-        'Participated in a national UI/UX seminar focused on modern design principles, user-centered design, and industry best practices to improve understanding of effective digital product and user experience.',
+        'Participated in a national UI/UX seminar focused on modern design principles, user-centered design, and industry best practices to deepen understanding of effective digital products and user experiences, presented by speaker recognized for achievements in AWS UI/UX competitions.',
       image: '/Logo-Universitas-Widyatama.png',
       links: [
         {

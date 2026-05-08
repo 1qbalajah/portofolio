@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export function EducationSection() {
   return (
-    <section id="education" className="py-24 w-full max-w-4xl mx-auto">
+    <section id="education" className="py-20 w-full max-w-4xl mx-auto">
       <BlurFade delay={0.1}>
         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl mb-12 text-center">
           Education
@@ -18,7 +18,7 @@ export function EducationSection() {
           <BlurFade key={edu.school} delay={0.15 + idx * 0.1}>
             <motion.div
               whileHover={{ y: -5 }}
-              className="relative overflow-hidden rounded-2xl p-6 border border-border/50 bg-background/50 backdrop-blur-md shadow-sm hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)] hover:border-blue-500/30 transition-all duration-300"
+              className="relative overflow-hidden rounded-2xl p-7 border border-border/50 bg-background/50 backdrop-blur-md shadow-sm hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)] hover:border-blue-500/30 transition-all duration-300"
             >
               <div className="flex items-center gap-4">
                 {edu.logoUrl && (

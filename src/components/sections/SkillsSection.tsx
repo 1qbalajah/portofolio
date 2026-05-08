@@ -7,7 +7,7 @@ import { DATA } from "@/data/resume";
 
 export function SkillsSection() {
   return (
-    <section className="relative isolate flex min-h-screen w-full items-center justify-center px-4 py-24">
+    <section className="relative flex min-h-[65vh] w-full items-center justify-center py-5">
       <RetroGrid className="!absolute !left-1/2 !top-0 !-z-20 !h-full !w-[140vw] !-translate-x-1/2" />
 
       <div className="pointer-events-none absolute inset-0 -z-10" />

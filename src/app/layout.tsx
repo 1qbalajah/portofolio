@@ -7,7 +7,6 @@ import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 import { ThemeParticles } from '@/components/ThemeParticles'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
-import { SmoothCursor } from '@/components/ui/smooth-cursor'
 import './globals.css'
 
 const fontSans = FontSans({
@@ -64,7 +63,6 @@ export default function RootLayout ({
           fontSans.variable
         )}
       >
-        <SmoothCursor />
         <ThemeProvider attribute='class' defaultTheme='dark'>
           <TooltipProvider delayDuration={0}>
             <ScrollProgress />
