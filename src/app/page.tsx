@@ -2,12 +2,10 @@ import React from "react";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { MarqueeSection } from "@/components/sections/MarqueeSection";
 import { AboutSection } from "@/components/sections/AboutSection";
-import { EducationSection } from "@/components/sections/EducationSection";
-import { ExperienceSection } from "@/components/sections/experiencesection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
-import { CertificatesSection } from "@/components/sections/CertificatesSection";
 import { GallerySection } from "@/components/sections/GallerySection";
+import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function Page() {
   return (
@@ -15,12 +13,10 @@ export default function Page() {
       <HeroSection />
       <MarqueeSection />
       <AboutSection />
-      <EducationSection />
       <SkillsSection />
-      <ExperienceSection />
       <ProjectsSection />
-      <CertificatesSection />
       <GallerySection />
+      <ContactSection />
     </main>
   );
 }

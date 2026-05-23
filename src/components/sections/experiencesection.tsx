@@ -3,78 +3,113 @@
 import React from "react";
 import BlurFade from "@/components/magicui/blur-fade";
 import { DATA } from "@/data/resume";
+import { motion } from "framer-motion";
+import { BriefcaseIcon, CalendarIcon, MapPinIcon } from "lucide-react";
 
 export function ExperienceSection() {
   return (
     <section id="experience" className="w-full py-24">
+      {/* Section Header */}
       <BlurFade delay={0.1}>
         <div className="mb-12 flex flex-col items-center justify-center text-center">
-          <div className="flex flex-col items-center gap-4">
-            <div className="inline-block rounded-lg bg-foreground px-3 py-1 text-sm text-background">
-              Experience
-            </div>
-
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Organization & Experience
-            </h2>
-
-            <p className="mx-auto max-w-[800px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              My experience in organizations and communities has helped me build
-              leadership, collaboration, and problem-solving skills.
-            </p>
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/50 px-4 py-2 backdrop-blur-xl">
+            <BriefcaseIcon className="size-4 text-amber-600 dark:text-amber-400" />
+            <span className="text-sm font-medium text-muted-foreground">
+              Leadership & Community
+            </span>
           </div>
+
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+            Organization & Experience
+          </h2>
+
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            My experience in organizations and communities has helped me build
+            leadership, collaboration, and problem-solving skills.
+          </p>
         </div>
       </BlurFade>
 
-      <BlurFade delay={0.2}>
-        <div className="mx-auto max-w-5xl">
-          <ul className="ml-6 divide-y divide-dashed border-l">
+      {/* Experience Timeline */}
+      <div className="mx-auto max-w-4xl">
+        {/* Timeline line */}
+        <div className="relative ml-6 md:ml-12">
+          <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-amber-500 via-fuchsia-500 to-transparent" />
+
+          <div className="space-y-8">
             {DATA.experience.map((org, idx) => {
               const title = org.experience ?? "Experience";
 
               return (
-                <BlurFade key={title} delay={0.25 + idx * 0.05}>
-                  <li className="relative py-6 pl-10">
-                    <div className="absolute -left-6 top-6 flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border bg-background shadow-sm">
-                      {org.logoUrl ? (
-                        <img
-                          src={org.logoUrl}
-                          alt={title}
-                          className="h-full w-full object-cover"
-                        />
-                      ) : (
-                        <span className="text-sm font-bold">
-                          {title.charAt(0)}
-                        </span>
-                      )}
+                <BlurFade key={title} delay={0.2 + idx * 0.1}>
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    whileHover={{ scale: 1.02, y: -3 }}
+                    className="group relative pl-10 md:pl-16"
+                  >
+                    {/* Timeline dot */}
+                    <div className="absolute -left-1.5 top-6 flex size-8 items-center justify-center rounded-full border-2 border-background bg-gradient-to-br from-amber-500 to-orange-600 shadow-[0_0_20px_rgba(245,158,11,0.4)]">
+                      <div className="size-2 rounded-full bg-white" />
                     </div>
 
-                    <div className="flex flex-col">
-                      <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                        <div>
-                          <h3 className="text-lg font-semibold">{title}</h3>
+                    <div className="relative overflow-hidden rounded-2xl border border-border/50 bg-background/50 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:border-amber-500/40 hover:shadow-[0_0_40px_-10px_rgba(245,158,11,0.3)]">
+                      {/* Header */}
+                      <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                        <div className="flex items-start gap-4">
+                          {/* Org Logo */}
+                          <div className="flex size-14 shrink-0 items-center justify-center rounded-xl border border-border/50 bg-background shadow-sm">
+                            {org.logoUrl ? (
+                              <img
+                                src={org.logoUrl}
+                                alt={title}
+                                className="size-10 rounded-lg object-contain"
+                              />
+                            ) : (
+                              <span className="text-lg font-bold text-amber-600">
+                                {title.charAt(0)}
+                              </span>
+                            )}
+                          </div>
 
-                          <p className="text-sm font-medium text-foreground">
-                            {org.role}
-                          </p>
+                          <div>
+                            <h3 className="text-lg font-bold">{title}</h3>
+                            <p className="text-sm font-medium text-amber-600 dark:text-amber-400">
+                              {org.role}
+                            </p>
+                          </div>
                         </div>
 
-                        <span className="text-sm text-muted-foreground">
-                          {org.start} - {org.end}
-                        </span>
+                        {/* Meta info */}
+                        <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+                          <div className="flex items-center gap-1 rounded-full bg-background/50 px-3 py-1 backdrop-blur-md">
+                            <CalendarIcon className="size-3" />
+                            {org.start} - {org.end}
+                          </div>
+                          {org.location && (
+                            <div className="flex items-center gap-1 rounded-full bg-background/50 px-3 py-1 backdrop-blur-md">
+                              <MapPinIcon className="size-3" />
+                              {org.location}
+                            </div>
+                          )}
+                        </div>
                       </div>
 
-                      <p className="mt-3 text-sm text-muted-foreground">
+                      {/* Description */}
+                      <p className="text-sm leading-relaxed text-muted-foreground">
                         {org.description}
                       </p>
+
+                      {/* Decorative accent */}
+                      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500/20 via-fuchsia-500/20 to-transparent transition-all duration-300 group-hover:h-1.5" />
                     </div>
-                  </li>
+                  </motion.div>
                 </BlurFade>
               );
             })}
-          </ul>
+          </div>
         </div>
-      </BlurFade>
+      </div>
     </section>
   );
 }

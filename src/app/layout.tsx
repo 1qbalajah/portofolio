@@ -5,7 +5,6 @@ import { DATA } from '@/data/resume'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
-import { ThemeParticles } from '@/components/ThemeParticles'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
 import './globals.css'
 
@@ -50,6 +49,20 @@ export const metadata: Metadata = {
   }
 }
 
+// ✅ FIXED: This function now just returns the JSX element
+function GridBackground() {
+  return <div className="grid-background" />
+}
+
+function AmbientGlows() {
+  return (
+    <>
+      <div className="ambient-glow ambient-glow-primary" />
+      <div className="ambient-glow ambient-glow-secondary" />
+    </>
+  )
+}
+
 export default function RootLayout ({
   children
 }: Readonly<{
@@ -59,17 +72,20 @@ export default function RootLayout ({
     <html lang='en' suppressHydrationWarning>
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased',
+          'min-h-screen bg-background font-sans antialiased relative overflow-x-hidden',
           fontSans.variable
         )}
       >
-        <ThemeProvider attribute='class' defaultTheme='dark'>
+        <ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
+          {/* Background layers */}
+          <GridBackground />
+          <AmbientGlows />
+          
           <TooltipProvider delayDuration={0}>
             <ScrollProgress />
-            <ThemeParticles />
-            <div className='relative mx-auto w-full max-w-7xl px-4 md:px-8 py-12 sm:py-24'>
+            <main className='relative w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-24'>
               {children}
-            </div>
+            </main>
             <Navbar />
           </TooltipProvider>
         </ThemeProvider>

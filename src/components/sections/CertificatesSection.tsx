@@ -16,20 +16,9 @@ export function CertificatesSection() {
     <section id="certificates" className="w-full py-24">
       <BlurFade delay={0.1}>
         <div className="mb-12 flex flex-col items-center justify-center text-center">
-          <div className="flex flex-col items-center gap-4">
-            <div className="inline-block rounded-lg bg-foreground px-3 py-1 text-sm text-background">
-              Achievement & Certification
-            </div>
-
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Proof of My Skills & Dedication
-            </h2>
-
-            <p className="mx-auto max-w-[800px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              A collection of certifications that reflect my commitment to
-              continuous learning, skill development, and professional growth.
-            </p>
-          </div>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+            Certificates
+          </h2>
         </div>
       </BlurFade>
 
@@ -59,7 +48,6 @@ export function CertificatesSection() {
                     <h3 className="text-xl font-bold leading-tight">
                       {cert.title}
                     </h3>
-
                     <div className="mt-1 flex flex-wrap items-center gap-2 text-sm">
                       <p className="font-medium text-foreground">
                         Issuer: {cert.issuer}
