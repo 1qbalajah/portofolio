@@ -9,7 +9,7 @@ export function ScrollProgress ({ className, ...props }: any) {
   return (
     <motion.div
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 h-1 origin-left bg-gradient-to-r from-[#A97CF8] via-[#F38CB8] to-[#FDCC92]',
+        'fixed top-0 left-0 right-0 z-50 h-1 origin-left bg-gradient-to-r from-lime-300 via-emerald-500 to-cyan-400 shadow-[0_0_18px_rgba(190,242,100,0.55)]',
         className
       )}
       style={{

@@ -17,7 +17,7 @@ export const DATA = {
   sosmed: {
     instagram: {
       name: 'Instagram',
-      username: '@_nglbal',
+      username: '_nglbal',
       url: 'https://instagram.com/_nglbal'
     },
     github: {
@@ -34,10 +34,10 @@ export const DATA = {
   description: 'Student developers',
   desc: ' focused on building practical digital solutions, with active contributions to school organizations, collaborative projects, and real-world product development.',
   about:
-    'As a vocational high school student in Information Technology, I focus on ',
-  about1: 'UI/UX design and front-end development',
+    'I’m Iqbal Asqalani, a vocational high school student with a strong passion for continuous growth and adaptability in technology, focusing on',
+  about1: 'UI/UX Design and Frontend Development',
   about2:
-    'to create digital interfaces that are engaging, functional, and user-friendly. Through school projects, organizational involvement, and independent exploration, I continue to improve my skills in interface design, modern web development, and practical digital solutions. I am committed to continuous growth and contributing my best to every team, organization, and project I take part in.',
+    'while actively building digital experiences through projects, collaboration, and problem-solving.',
   avatarUrl: '/me.JPG', // Ensure this image exists in public folder
   skills: [
     { name: 'Javascript', icon: 'https://cdn.simpleicons.org/javascript' },

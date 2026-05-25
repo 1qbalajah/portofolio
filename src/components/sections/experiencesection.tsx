@@ -13,7 +13,7 @@ export function ExperienceSection() {
       <BlurFade delay={0.1}>
         <div className="mb-12 flex flex-col items-center justify-center text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/50 px-4 py-2 backdrop-blur-xl">
-            <BriefcaseIcon className="size-4 text-amber-600 dark:text-amber-400" />
+            <BriefcaseIcon className="size-4 text-lime-600 dark:text-lime-300" />
             <span className="text-sm font-medium text-muted-foreground">
               Leadership & Community
             </span>
@@ -34,7 +34,7 @@ export function ExperienceSection() {
       <div className="mx-auto max-w-4xl">
         {/* Timeline line */}
         <div className="relative ml-6 md:ml-12">
-          <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-amber-500 via-fuchsia-500 to-transparent" />
+          <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-lime-300 via-emerald-500 to-transparent" />
 
           <div className="space-y-8">
             {DATA.experience.map((org, idx) => {
@@ -49,11 +49,11 @@ export function ExperienceSection() {
                     className="group relative pl-10 md:pl-16"
                   >
                     {/* Timeline dot */}
-                    <div className="absolute -left-1.5 top-6 flex size-8 items-center justify-center rounded-full border-2 border-background bg-gradient-to-br from-amber-500 to-orange-600 shadow-[0_0_20px_rgba(245,158,11,0.4)]">
+                    <div className="absolute -left-1.5 top-6 flex size-8 items-center justify-center rounded-full border-2 border-background bg-gradient-to-br from-lime-300 to-emerald-500 shadow-[0_0_20px_rgba(190,242,100,0.45)]">
                       <div className="size-2 rounded-full bg-white" />
                     </div>
 
-                    <div className="relative overflow-hidden rounded-2xl border border-border/50 bg-background/50 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:border-amber-500/40 hover:shadow-[0_0_40px_-10px_rgba(245,158,11,0.3)]">
+                    <div className="relative overflow-hidden rounded-2xl border border-border/50 bg-background/50 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:border-lime-300/40 hover:shadow-[0_0_40px_-10px_rgba(190,242,100,0.32)]">
                       {/* Header */}
                       <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                         <div className="flex items-start gap-4">
@@ -66,7 +66,7 @@ export function ExperienceSection() {
                                 className="size-10 rounded-lg object-contain"
                               />
                             ) : (
-                              <span className="text-lg font-bold text-amber-600">
+                              <span className="text-lg font-bold text-lime-600">
                                 {title.charAt(0)}
                               </span>
                             )}
@@ -74,7 +74,7 @@ export function ExperienceSection() {
 
                           <div>
                             <h3 className="text-lg font-bold">{title}</h3>
-                            <p className="text-sm font-medium text-amber-600 dark:text-amber-400">
+                            <p className="text-sm font-medium text-lime-600 dark:text-lime-300">
                               {org.role}
                             </p>
                           </div>
@@ -101,7 +101,7 @@ export function ExperienceSection() {
                       </p>
 
                       {/* Decorative accent */}
-                      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500/20 via-fuchsia-500/20 to-transparent transition-all duration-300 group-hover:h-1.5" />
+                      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-lime-300/25 via-emerald-500/20 to-transparent transition-all duration-300 group-hover:h-1.5" />
                     </div>
                   </motion.div>
                 </BlurFade>

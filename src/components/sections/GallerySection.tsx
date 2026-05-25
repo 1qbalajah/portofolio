@@ -12,7 +12,7 @@ export function GallerySection() {
       <BlurFade delay={0.1}>
         <div className="mb-12 flex flex-col items-center justify-center text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/50 px-4 py-2 backdrop-blur-xl">
-            <Map className="size-4 text-violet-600 dark:text-violet-400" />
+            <Map className="size-4 text-lime-600 dark:text-lime-300" />
             <span className="text-sm font-medium text-muted-foreground">
               My Journey
             </span>

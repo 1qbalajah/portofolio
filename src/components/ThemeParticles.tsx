@@ -9,7 +9,7 @@ export function ThemeParticles() {
   const [color, setColor] = useState("#ffffff");
 
   useEffect(() => {
-    setColor(resolvedTheme === "dark" ? "#38bdf8" : "#2563eb");
+    setColor(resolvedTheme === "dark" ? "#bef264" : "#22c55e");
   }, [resolvedTheme]);
 
   return (

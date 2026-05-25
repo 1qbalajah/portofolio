@@ -11,13 +11,13 @@ const socialLinks = [
     label: DATA.sosmed.github.name,
     href: DATA.sosmed.github.url,
     icon: GithubIcon,
-    hoverClass: "hover:border-violet-500/50 hover:bg-violet-500/10 hover:text-violet-600 dark:hover:border-violet-400/50 dark:hover:bg-violet-400/10 dark:hover:text-violet-300",
+    hoverClass: "hover:border-lime-500/50 hover:bg-lime-500/10 hover:text-lime-600 dark:hover:border-lime-300/50 dark:hover:bg-lime-300/10 dark:hover:text-lime-200",
   },
   {
     label: DATA.sosmed.instagram.name,
     href: DATA.sosmed.instagram.url,
     icon: InstagramIcon,
-    hoverClass: "hover:border-pink-500/50 hover:bg-pink-500/10 hover:text-pink-600 dark:hover:border-pink-400/50 dark:hover:bg-pink-400/10 dark:hover:text-pink-300",
+    hoverClass: "hover:border-emerald-500/50 hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:border-emerald-300/50 dark:hover:bg-emerald-300/10 dark:hover:text-emerald-200",
   },
   {
     label: DATA.sosmed.linkedin.name,
@@ -29,7 +29,7 @@ const socialLinks = [
     label: "Email",
     href: `mailto:${DATA.contact.email}`,
     icon: MailIcon,
-    hoverClass: "hover:border-red-500/50 hover:bg-red-500/10 hover:text-red-600 dark:hover:border-red-400/50 dark:hover:bg-red-400/10 dark:hover:text-red-300",
+    hoverClass: "hover:border-lime-500/50 hover:bg-lime-500/10 hover:text-lime-600 dark:hover:border-lime-300/50 dark:hover:bg-lime-300/10 dark:hover:text-lime-200",
   },
 ];
 
@@ -48,7 +48,7 @@ export function ContactSection() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
               Connect With Me
             </h2>
-            <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-[4px] w-[40%] bg-gradient-to-r from-violet-600 to-fuchsia-500 rounded-full" />
+            <span className="absolute -bottom-2 left-1/2 h-[4px] w-[40%] -translate-x-1/2 rounded-full bg-gradient-to-r from-lime-300 via-emerald-500 to-cyan-400 shadow-[0_0_18px_rgba(190,242,100,0.45)]" />
           </div>
 
           {/* Description */}

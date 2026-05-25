@@ -1,12 +1,10 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
-import BlurFade from '@/components/magicui/blur-fade'
 import { DATA } from '@/data/resume'
 import ProfileCardComponent from '@/components/ProfileCard'
-import { GraduationCapIcon, CalendarIcon, GithubIcon, InstagramIcon, LinkedinIcon, MailIcon } from 'lucide-react'
+import { GraduationCapIcon, CalendarIcon } from 'lucide-react'
 
 // Animated Counter Component
 function AnimatedCounter ({
@@ -46,7 +44,7 @@ export function AboutSection () {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className='w-full max-w-7xl overflow-hidden rounded-3xl border border-border/50 bg-background/50 backdrop-blur-xl'
+        className='w-full max-w-7xl overflow-hidden rounded-3xl border border-lime-300/20 bg-background/50 shadow-[0_0_60px_-28px_rgba(190,242,100,0.5)] backdrop-blur-xl'
       >
         {/* 2-Column Grid Layout */}
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-0'>
@@ -57,7 +55,7 @@ export function AboutSection () {
               <h2 className='text-3xl font-bold tracking-tighter sm:text-5xl'>
                 About Me
               </h2>
-              <span className='absolute -bottom-2 left-0 h-[4px] w-[40%] bg-gradient-to-r from-violet-600 to-fuchsia-500 rounded-full' />
+              <span className='absolute -bottom-2 left-0 h-[4px] w-[40%] rounded-full bg-gradient-to-r from-lime-300 via-emerald-500 to-cyan-400 shadow-[0_0_18px_rgba(190,242,100,0.45)]' />
             </div>
 
             {/* Description */}
@@ -75,14 +73,14 @@ export function AboutSection () {
             {/* Education Only Column */}
             <div className='space-y-4'>
               <h3 className='flex items-center gap-2 text-lg font-bold tracking-tight'>
-                <GraduationCapIcon className='size-5 text-violet-600 dark:text-violet-400' />
+                <GraduationCapIcon className='size-5 text-lime-600 dark:text-lime-300' />
                 Education
               </h3>
 
               {DATA.education.map(edu => (
                 <div
                   key={edu.school}
-                  className='flex flex-col gap-3 rounded-2xl border border-border/50 bg-background/30 p-4 sm:flex-row sm:items-center sm:justify-between'
+                  className='flex flex-col gap-3 rounded-2xl border border-lime-300/15 bg-background/30 p-4 transition-colors duration-300 hover:border-lime-300/35 sm:flex-row sm:items-center sm:justify-between'
                 >
                   {/* Kiri: Logo + Sekolah + Gelar */}
                   <div className='flex items-start gap-3'>
@@ -113,13 +111,13 @@ export function AboutSection () {
             {/* Stats Row: Projects, Certificates, Experience */}
             <div className='grid grid-cols-3 gap-4'>
               <div className='flex flex-col items-center justify-center rounded-2xl border border-border/50 bg-background/30 p-4 text-center'>
-                <span className='text-2xl font-bold text-violet-600 dark:text-violet-400'>
+                <span className='bg-gradient-to-r from-lime-400 to-emerald-500 bg-clip-text text-2xl font-bold text-transparent'>
                   <AnimatedCounter value={DATA.projects.length} />
                 </span>
                 <span className='text-xs text-muted-foreground'>Projects</span>
               </div>
               <div className='flex flex-col items-center justify-center rounded-2xl border border-border/50 bg-background/30 p-4 text-center'>
-                <span className='text-2xl font-bold text-amber-600 dark:text-amber-400'>
+                <span className='bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-2xl font-bold text-transparent'>
                   <AnimatedCounter value={DATA.certificates.length} />
                 </span>
                 <span className='text-xs text-muted-foreground'>
@@ -127,11 +125,11 @@ export function AboutSection () {
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center rounded-2xl border border-border/50 bg-background/30 p-4 text-center'>
-                <span className='text-2xl font-bold text-emerald-600 dark:text-emerald-400'>
+                <span className='bg-gradient-to-r from-lime-300 via-emerald-500 to-cyan-400 bg-clip-text text-2xl font-bold text-transparent'>
                   <AnimatedCounter value={DATA.experience.length} />
                 </span>
                 <span className='text-xs text-muted-foreground'>
-                  Experience
+                  Organisation
                 </span>
               </div>
             </div>
@@ -140,8 +138,7 @@ export function AboutSection () {
           {/* Right Column - Profile Card */}
           <div className='flex items-center justify-center p-8 lg:p-12'>
             <ProfileCardComponent
-              avatarUrl='/iqbal.JPG'
-              name={DATA.name}
+              avatarUrl='/me.png'
               handle={DATA.sosmed.instagram.username}
               status='Available'
               contactText='Contact Me'

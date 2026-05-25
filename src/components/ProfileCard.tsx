@@ -5,7 +5,6 @@ import React, { useCallback, useState } from "react";
 interface ProfileCardProps {
   avatarUrl?: string;
   miniAvatarUrl?: string;
-  name?: string;
   handle?: string;
   status?: string;
   contactText?: string;
@@ -16,9 +15,8 @@ interface ProfileCardProps {
 }
 
 export default function ProfileCard({
-  avatarUrl = "/avatar.jpg",
+  avatarUrl = "",
   miniAvatarUrl,
-  name = "Rifky Febrian",
   handle = "Rifky",
   status = "Online",
   contactText = "Contact Me",
@@ -98,7 +96,7 @@ export default function ProfileCard({
 
           <img
             src={avatarUrl}
-            alt={`${name} avatar`}
+            alt={`avatar`}
             className="absolute inset-x-0 bottom-0 z-10 h-full w-full object-cover object-bottom opacity-100"
           />
 
@@ -118,19 +116,13 @@ export default function ProfileCard({
             }}
           />
 
-          <div className="absolute inset-x-0 top-12 z-30 text-center">
-            <h3 className="mx-auto max-w-[280px] text-balance text-3xl font-extrabold tracking-tight text-black/55 drop-shadow-[0_0_10px_rgba(255,255,255,0.45)]">
-              {name}
-            </h3>
-          </div>
-
           {showUserInfo && (
             <div className="absolute inset-x-5 bottom-5 z-40 flex items-center justify-between rounded-2xl border border-white/20 bg-white/20 px-4 py-3 shadow-[0_0_24px_rgba(255,255,255,0.12)] backdrop-blur-xl">
               <div className="flex min-w-0 items-center gap-3">
                 <div className="size-12 shrink-0 overflow-hidden rounded-full border border-white/20 bg-white/10">
                   <img
                     src={miniAvatarUrl || avatarUrl}
-                    alt={`${name} mini avatar`}
+                    alt={`mini avatar`}
                     className="h-full w-full object-cover"
                   />
                 </div>

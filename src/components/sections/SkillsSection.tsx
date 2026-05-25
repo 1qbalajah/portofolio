@@ -29,10 +29,10 @@ function SkillCard({
           <motion.div
             whileHover={{ scale: 1.08, y: -4 }}
             whileTap={{ scale: 0.95 }}
-            className="group relative flex size-28 cursor-pointer flex-col items-center justify-center rounded-2xl border-[3px] border-border/50 bg-background/60 p-5 backdrop-blur-xl transition-all duration-300 hover:border-violet-500/40 hover:shadow-[0_0_40px_-10px_rgba(99,102,241,0.3)]"
+            className="group relative flex size-28 cursor-pointer flex-col items-center justify-center rounded-2xl border-[3px] border-border/50 bg-background/60 p-5 backdrop-blur-xl transition-all duration-300 hover:border-lime-300/45 hover:shadow-[0_0_40px_-10px_rgba(190,242,100,0.35)]"
           >
             {/* Glow effect on hover */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-violet-500/10 via-fuchsia-500/5 to-pink-500/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-lime-300/12 via-emerald-500/8 to-cyan-400/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
             {/* Icon */}
             <div className="relative mb-3 flex size-16 items-center justify-center">

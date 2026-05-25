@@ -4,7 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import BlurFade from "@/components/magicui/blur-fade";
 import {
-  SparklesIcon,
   SmartphoneIcon,
   MonitorIcon,
   ArrowUpRightIcon,
@@ -19,7 +18,7 @@ const designItems = [
     description: "Portfolio platform featuring 40+ student projects with modern UI",
     image: "/P-BEST.png",
     icon: MonitorIcon,
-    color: "violet",
+    color: "lime",
     link: "https://best.smktibazma.com/",
   },
   {
@@ -29,7 +28,7 @@ const designItems = [
     description: "Modern school website with AI chatbot and student showcase",
     image: "/P-SMKTIBAZMA.png",
     icon: MonitorIcon,
-    color: "fuchsia",
+    color: "emerald",
     link: "https://smktibazma.sch.id/",
   },
   {
@@ -49,7 +48,7 @@ const designItems = [
     description: "Student entrepreneurship platform for real-world sales",
     image: "/P-JAJANIN.png",
     icon: SmartphoneIcon,
-    color: "pink",
+    color: "teal",
     link: "https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin",
   },
   {
@@ -69,19 +68,33 @@ const designItems = [
     description: "Revamped community portal for 1000+ users",
     image: "/P-HIMPANA.png",
     icon: MonitorIcon,
-    color: "amber",
+    color: "lime",
     link: "https://himpana.com/",
   },
 ];
 
 export function ArtExhibitionSection() {
-  const colorMap: Record<string, string> = {
-    violet: "violet",
-    fuchsia: "fuchsia",
-    cyan: "cyan",
-    pink: "pink",
-    emerald: "emerald",
-    amber: "amber",
+  const accentClassMap: Record<string, { border: string; text: string; shadow: string }> = {
+    lime: {
+      border: "hover:border-lime-300/40",
+      text: "text-lime-600 dark:text-lime-300",
+      shadow: "hover:shadow-[0_0_60px_-20px_rgba(190,242,100,0.35)]",
+    },
+    emerald: {
+      border: "hover:border-emerald-400/40",
+      text: "text-emerald-600 dark:text-emerald-300",
+      shadow: "hover:shadow-[0_0_60px_-20px_rgba(16,185,129,0.32)]",
+    },
+    cyan: {
+      border: "hover:border-cyan-400/40",
+      text: "text-cyan-600 dark:text-cyan-300",
+      shadow: "hover:shadow-[0_0_60px_-20px_rgba(6,182,212,0.32)]",
+    },
+    teal: {
+      border: "hover:border-teal-400/40",
+      text: "text-teal-600 dark:text-teal-300",
+      shadow: "hover:shadow-[0_0_60px_-20px_rgba(20,184,166,0.32)]",
+    },
   };
 
   return (
@@ -100,7 +113,10 @@ export function ArtExhibitionSection() {
 
       {/* Items Grid - One column, image right, text left */}
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 sm:px-6 lg:px-8">
-        {designItems.map((item, index) => (
+        {designItems.map((item, index) => {
+          const accent = accentClassMap[item.color] ?? accentClassMap.lime;
+
+          return (
           <BlurFade key={item.id} delay={0.1 + index * 0.1}>
             <motion.a
               href={item.link}
@@ -110,12 +126,12 @@ export function ArtExhibitionSection() {
               animate={{ opacity: 1, y: 0 }}
               whileHover={{ scale: 1.02, y: -4 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className={`group relative flex flex-col-reverse overflow-hidden rounded-3xl border border-border/50 bg-background/50 backdrop-blur-xl transition-all duration-500 hover:border-${colorMap[item.color]}-500/40 hover:shadow-[0_0_60px_-20px_rgba(99,102,241,0.3)] sm:flex-row`}
+              className={`group relative flex flex-col-reverse overflow-hidden rounded-3xl border border-border/50 bg-background/50 backdrop-blur-xl transition-all duration-500 ${accent.border} ${accent.shadow} sm:flex-row`}
             >
               {/* Text Content - Left Side */}
               <div className="flex flex-1 flex-col justify-center p-8">
                 <div className="mb-2 flex items-center gap-2">
-                  <item.icon className={`size-4 text-${colorMap[item.color]}-600 dark:text-${colorMap[item.color]}-400`} />
+                  <item.icon className={`size-4 ${accent.text}`} />
                   <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                     {item.category}
                   </span>
@@ -125,10 +141,10 @@ export function ArtExhibitionSection() {
                   {item.description}
                 </p>
                 <div className="flex items-center gap-2">
-                  <span className={`text-sm font-medium text-${colorMap[item.color]}-600 dark:text-${colorMap[item.color]}-400`}>
+                  <span className={`text-sm font-medium ${accent.text}`}>
                     View Project
                   </span>
-                  <ArrowUpRightIcon className={`size-4 text-${colorMap[item.color]}-600 dark:text-${colorMap[item.color]}-400`} />
+                  <ArrowUpRightIcon className={`size-4 ${accent.text}`} />
                 </div>
               </div>
 
@@ -143,7 +159,8 @@ export function ArtExhibitionSection() {
               </div>
             </motion.a>
           </BlurFade>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

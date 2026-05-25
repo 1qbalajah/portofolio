@@ -1,12 +1,12 @@
-'use client';
+'use client'
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import BlurFade from '@/components/magicui/blur-fade';
-import { DATA } from '@/data/resume';
-import { Badge } from '@/components/ui/badge';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import BlurFade from '@/components/magicui/blur-fade'
+import { DATA } from '@/data/resume'
+import { Badge } from '@/components/ui/badge'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 import {
   FolderIcon,
   TrophyIcon,
@@ -14,30 +14,31 @@ import {
   ExternalLinkIcon,
   GithubIcon,
   GlobeIcon,
-  CalendarIcon,
-} from 'lucide-react';
+  CalendarIcon
+} from 'lucide-react'
 
 // Filter tabs
-type FilterTab = 'projects' | 'certificates' | 'experience';
+type FilterTab = 'projects' | 'certificates' | 'experience'
 
-const filterTabs: { id: FilterTab; label: string; icon: React.ElementType }[] = [
-  { id: 'projects', label: 'Projects', icon: GlobeIcon },
-  { id: 'certificates', label: 'Certificates', icon: TrophyIcon },
-  { id: 'experience', label: 'Experience', icon: BriefcaseIcon },
-];
+const filterTabs: { id: FilterTab; label: string; icon: React.ElementType }[] =
+  [
+    { id: 'projects', label: 'Projects', icon: GlobeIcon },
+    { id: 'certificates', label: 'Certificates', icon: TrophyIcon },
+    { id: 'experience', label: 'Organisation', icon: BriefcaseIcon }
+  ]
 
 // Project Card Component
-type ProjectType = typeof DATA.projects[number];
-type CertificateType = typeof DATA.certificates[number];
+type ProjectType = typeof DATA.projects[number]
+type CertificateType = typeof DATA.certificates[number]
 
-function ProjectCard({
+function ProjectCard ({
   project,
-  index,
+  index
 }: {
-  project: ProjectType;
-  index: number;
+  project: ProjectType
+  index: number
 }) {
-  const primaryLink = project.links[0];
+  const primaryLink = project.links[0]
 
   return (
     <BlurFade delay={0.1 + index * 0.05}>
@@ -48,7 +49,7 @@ function ProjectCard({
         exit={{ opacity: 0, y: -20 }}
         whileHover={{ y: -8, scale: 1.02 }}
         transition={{ duration: 0.3, ease: 'easeOut' }}
-        className='group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border/50 bg-background/50 shadow-sm backdrop-blur-xl transition-all duration-300 hover:border-violet-500/30 hover:shadow-[0_0_40px_-10px_rgba(99,102,241,0.3)]'
+        className='group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border/50 bg-background/50 shadow-sm backdrop-blur-xl transition-all duration-300 hover:border-lime-300/35 hover:shadow-[0_0_40px_-10px_rgba(190,242,100,0.34)]'
       >
         {/* Image */}
         <div className='relative h-64 w-full overflow-hidden bg-muted/40'>
@@ -79,21 +80,25 @@ function ProjectCard({
         <div className='relative z-10 flex flex-grow flex-col p-6'>
           <h3 className='mb-1 text-xl font-bold'>{project.title}</h3>
 
-          <time className='mb-4 text-xs text-muted-foreground'>{project.dates}</time>
+          <time className='mb-4 text-xs text-muted-foreground'>
+            {project.dates}
+          </time>
 
           <p className='mb-6 flex-grow text-sm text-muted-foreground'>
             {project.desc}
-            <span className='font-semibold text-foreground'>{project.textbold}</span>{' '}
+            <span className='font-semibold text-foreground'>
+              {project.textbold}
+            </span>{' '}
             {project.description}
           </p>
 
           {/* Tech Stack */}
           <div className='mb-6 flex flex-wrap gap-2'>
-            {project.technologies.map((tech) => (
+            {project.technologies.map(tech => (
               <Badge
                 key={tech}
                 variant='outline'
-                className='border-border/50 bg-background/50 text-xs backdrop-blur-md transition-colors duration-300 hover:border-violet-500/50 hover:bg-violet-500/10'
+                className='border-border/50 bg-background/50 text-xs backdrop-blur-md transition-colors duration-300 hover:border-lime-300/50 hover:bg-lime-300/10'
               >
                 {tech}
               </Badge>
@@ -104,7 +109,7 @@ function ProjectCard({
           {primaryLink && (
             <Button
               asChild
-              className='group/button w-full overflow-hidden rounded-full border border-border/50 bg-background/50 text-foreground shadow-lg backdrop-blur-xl transition-all duration-300 hover:border-violet-500/50 hover:bg-violet-500/10 hover:shadow-[0_10px_30px_rgba(99,102,241,0.2)]'
+              className='group/button w-full overflow-hidden rounded-full border border-border/50 bg-background/50 text-foreground shadow-lg backdrop-blur-xl transition-all duration-300 hover:border-lime-300/50 hover:bg-lime-300/10 hover:shadow-[0_10px_30px_rgba(190,242,100,0.22)]'
             >
               <Link
                 href={primaryLink.href}
@@ -124,16 +129,16 @@ function ProjectCard({
         </div>
       </motion.div>
     </BlurFade>
-  );
+  )
 }
 
 // Certificate Card Component
-function CertificateCard({
+function CertificateCard ({
   cert,
-  index,
+  index
 }: {
-  cert: CertificateType;
-  index: number;
+  cert: CertificateType
+  index: number
 }) {
   return (
     <BlurFade delay={0.1 + index * 0.05}>
@@ -190,11 +195,11 @@ function CertificateCard({
         )}
       </motion.div>
     </BlurFade>
-  );
+  )
 }
 
-export function ProjectsSection() {
-  const [activeFilter, setActiveFilter] = useState<FilterTab>('projects');
+export function ProjectsSection () {
+  const [activeFilter, setActiveFilter] = useState<FilterTab>('projects')
 
   return (
     <section id='projects' className='w-full py-24'>
@@ -202,20 +207,20 @@ export function ProjectsSection() {
       <BlurFade delay={0.1}>
         <div className='mb-12 flex flex-col items-center justify-center text-center'>
           <div className='mb-4 inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/50 px-4 py-2 backdrop-blur-xl'>
-            <FolderIcon className='size-4 text-violet-600 dark:text-violet-400' />
+            <FolderIcon className='size-4 text-lime-600 dark:text-lime-300' />
             <span className='text-sm font-medium text-muted-foreground'>
               Portfolio Showcase
             </span>
           </div>
 
           <h2 className='text-3xl font-bold tracking-tighter sm:text-5xl'>
-            Check out my latest work
+            Explore My Creative & Technical Journey
           </h2>
 
           <p className='mx-auto mt-4 max-w-800px text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
-            A curated collection of projects, certificates, and design explorations
-            showcasing my skills and passion for creating impactful digital
-            experiences.
+            A curated collection of projects, certifications, and organizational
+            experiences showcasing my skills, contributions, and passion for
+            building impactful digital experiences.
           </p>
         </div>
       </BlurFade>
@@ -223,7 +228,7 @@ export function ProjectsSection() {
       {/* Filter Tabs */}
       <BlurFade delay={0.2}>
         <div className='mb-12 flex flex-wrap items-center justify-center gap-3'>
-          {filterTabs.map((tab) => (
+          {filterTabs.map(tab => (
             <button
               key={tab.id}
               onClick={() => setActiveFilter(tab.id)}
@@ -232,8 +237,8 @@ export function ProjectsSection() {
                 transition-all duration-300
                 ${
                   activeFilter === tab.id
-                    ? 'bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white shadow-lg shadow-violet-500/25'
-                    : 'border border-border/50 bg-background/50 text-muted-foreground hover:border-violet-500/50 hover:bg-violet-500/10 hover:text-foreground backdrop-blur-xl'
+                    ? 'bg-gradient-to-r from-lime-300 via-emerald-500 to-cyan-400 text-zinc-950 shadow-lg shadow-lime-300/25'
+                    : 'border border-border/50 bg-background/50 text-muted-foreground hover:border-lime-300/50 hover:bg-lime-300/10 hover:text-foreground backdrop-blur-xl'
                 }
               `}
             >
@@ -250,7 +255,11 @@ export function ProjectsSection() {
           {activeFilter === 'projects' && (
             <>
               {DATA.projects.map((project, idx) => (
-                <ProjectCard key={project.title} project={project} index={idx} />
+                <ProjectCard
+                  key={project.title}
+                  project={project}
+                  index={idx}
+                />
               ))}
             </>
           )}
@@ -258,7 +267,11 @@ export function ProjectsSection() {
           {activeFilter === 'certificates' && (
             <>
               {DATA.certificates.map((cert, idx) => (
-                <CertificateCard key={`${cert.title}-${idx}`} cert={cert} index={idx} />
+                <CertificateCard
+                  key={`${cert.title}-${idx}`}
+                  cert={cert}
+                  index={idx}
+                />
               ))}
             </>
           )}
@@ -266,7 +279,7 @@ export function ProjectsSection() {
           {activeFilter === 'experience' && (
             <>
               {DATA.experience.map((exp, idx) => {
-                const title = exp.experience ?? "Experience";
+                const title = exp.experience ?? 'Experience'
                 return (
                   <BlurFade key={title} delay={0.1 + idx * 0.05}>
                     <motion.div
@@ -275,19 +288,27 @@ export function ProjectsSection() {
                       exit={{ opacity: 0, y: -20 }}
                       whileHover={{ y: -8, scale: 1.02 }}
                       transition={{ duration: 0.3, ease: 'easeOut' }}
-                      className='group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border/50 bg-background/50 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:border-amber-500/30 hover:shadow-[0_0_40px_-10px_rgba(245,158,11,0.3)]'
+                      className='group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border/50 bg-background/50 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:border-lime-300/35 hover:shadow-[0_0_40px_-10px_rgba(190,242,100,0.32)]'
                     >
                       <div className='mb-4 flex items-start gap-4'>
                         {exp.logoUrl ? (
-                          <img src={exp.logoUrl} alt={title} className='size-10 rounded-lg object-contain' />
+                          <img
+                            src={exp.logoUrl}
+                            alt={title}
+                            className='size-10 rounded-lg object-contain'
+                          />
                         ) : (
                           <div className='flex size-12 items-center justify-center rounded-xl border border-border/50 bg-background'>
-                            <span className='text-lg font-bold text-amber-600'>{title.charAt(0)}</span>
+                            <span className='text-lg font-bold text-lime-600'>
+                              {title.charAt(0)}
+                            </span>
                           </div>
                         )}
                         <div>
                           <h3 className='text-xl font-bold'>{title}</h3>
-                          <p className='text-sm font-medium text-amber-600 dark:text-amber-400'>{exp.role}</p>
+                          <p className='text-sm font-medium text-lime-600 dark:text-lime-300'>
+                            {exp.role}
+                          </p>
                         </div>
                       </div>
                       <p className='flex-grow text-sm leading-relaxed text-muted-foreground'>
@@ -299,12 +320,12 @@ export function ProjectsSection() {
                       </div>
                     </motion.div>
                   </BlurFade>
-                );
+                )
               })}
             </>
           )}
         </AnimatePresence>
       </div>
     </section>
-  );
+  )
 }
