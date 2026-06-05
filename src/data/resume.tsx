@@ -1,16 +1,13 @@
 import { Icons } from '@/components/icons'
-import { url } from 'inspector'
 import {
   HomeIcon,
-  NotebookIcon,
   FolderIcon,
-  TrophyIcon,
   UserIcon
 } from 'lucide-react'
 
 export const DATA = {
   name: 'Muhammad Iqbal Asqalani',
-  call: 'My Name is Iqbal',
+  call: 'Hello my name is Muhammad Iqbal Asqalani',
   initials: 'MIA',
   url: 'https://iqbal-portofolio.vercel.app', // Adjust if needed
   subtitle: 'GoodBoy',
@@ -33,12 +30,13 @@ export const DATA = {
   },
   description: 'Student developers',
   desc: ' focused on building practical digital solutions, with active contributions to school organizations, collaborative projects, and real-world product development.',
+  about0: 'My name is Muhammad Iqbal Asqalani, ',
   about:
-    'I’m Iqbal Asqalani, a vocational high school student with a strong passion for continuous growth and adaptability in technology, focusing on',
+    'a vocational high school student with a strong passion for continuous growth and adaptability in technology, focusing on',
   about1: 'UI/UX Design and Frontend Development',
   about2:
     'while actively building digital experiences through projects, collaboration, and problem-solving.',
-  avatarUrl: '/me.JPG', // Ensure this image exists in public folder
+  avatarUrl: '/me.webp', // Ensure this image exists in public folder
   skills: [
     { name: 'Javascript', icon: 'https://cdn.simpleicons.org/javascript' },
     { name: 'Node.js', icon: 'https://cdn.simpleicons.org/nodedotjs/5FA04E' },
@@ -139,6 +137,8 @@ export const DATA = {
   ],
   projects: [
     {
+      id: 'project-best-showcase',
+      category: 'Aplikasi Web',
       title: 'BEST',
       href: 'https://best.smktibazma.com/',
       dates: 'July 2025',
@@ -161,10 +161,12 @@ export const DATA = {
           icon: <Icons.globe className='size-3' />
         }
       ],
-      image: '/P-BEST.png',
+      image: '/P-BEST.webp',
       video: ''
     },
     {
+      id: 'project-smkti-bazma-redesign',
+      category: 'Aplikasi Web',
       title: 'SMK TI BAZMA',
       href: 'https://smktibazma.sch.id/',
       dates: 'Aug 2025',
@@ -181,11 +183,13 @@ export const DATA = {
           icon: <Icons.globe className='size-3' />
         }
       ],
-      image: '/P-SMKTIBAZMA.png',
+      image: '/P-SMKTIBAZMA.webp',
       video: ''
     },
 
     {
+      id: 'project-himpana-community',
+      category: 'Aplikasi Web',
       title: 'HIMPANA',
       href: 'https://himpana.com/',
       dates: 'Oct 2025',
@@ -202,11 +206,13 @@ export const DATA = {
           icon: <Icons.globe className='size-3' />
         }
       ],
-      image: '/P-HIMPANA.png',
+      image: '/P-HIMPANA.webp',
       video: ''
     },
 
     {
+      id: 'project-sinergi-uiux',
+      category: 'UI/UX Design',
       title: 'Sinergi',
       href: 'https://www.figma.com/proto/dnVSPyd2FpipnCzA77ORV5/SINERGI?node-id=366-828&p=f&t=P4WpOTDAaIxa6mut-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1',
       dates: 'Dec 2025',
@@ -223,11 +229,13 @@ export const DATA = {
           icon: <Icons.globe className='size-3' />
         }
       ],
-      image: '/P-SINERGI.png',
+      image: '/P-SINERGI.webp',
       video: ''
     },
 
     {
+      id: 'project-jajanin-uiux',
+      category: 'UI/UX Design',
       title: 'JAJANIN',
       href: 'https://www.figma.com/proto/FDCr2m2p9O0L9V8aMOf99o/Jajanin?node-id=52-44&p=f&t=m8qPHTeANfCTEWyG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1106%3A5765&show-proto-sidebar=1',
       dates: 'Feb 2026',
@@ -244,11 +252,13 @@ export const DATA = {
           icon: <Icons.globe className='size-3' />
         }
       ],
-      image: '/P-JAJANIN.png',
+      image: '/P-JAJANIN.webp',
       video: ''
     },
 
     {
+      id: 'project-kajianqu-personal',
+      category: 'Aplikasi Pribadi',
       title: 'KajianQU',
       href: 'https://www.figma.com/proto/cQEHbUb5EeWBz1SX7C0wJX/KajianKu?node-id=683-18987&p=f&t=YzM0mXSwJ9csTAd1-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=683%3A18987&show-proto-sidebar=1',
       dates: 'Mar 2026',
@@ -265,12 +275,13 @@ export const DATA = {
           icon: <Icons.globe className='size-3' />
         }
       ],
-      image: '/P-KAJIANQU.png',
+      image: '/P-KAJIANQU.webp',
       video: ''
     }
   ],
   certificates: [
     {
+      id: 'cert-asean-data-science-explorers',
       title: 'ASEAN Data Science Explorers',
       issuer: 'SAP Analytics Cloud',
       dates: 'Nov 2025',
@@ -287,6 +298,7 @@ export const DATA = {
     },
 
     {
+      id: 'cert-national-school-website-competition',
       title: 'National School Website Competition',
       issuer: 'Jagoan Hosting Infra Competition',
       dates: 'Nov 2025',
@@ -303,12 +315,13 @@ export const DATA = {
     },
 
     {
+      id: 'cert-wise-innovera-uiux',
       title: 'National UI/UX Competition WISE INNOVERA',
       issuer: 'Widyatama University',
       dates: 'Feb 2026',
       description:
         'Achieved top 10 position out of 50 school teams across Indonesia in UI/UX design competition by developing solution-focused product designs and emphasizing user-centered thinking, ease of use, and interface clarity to effectively solve real user problems.',
-      image: '/Logo-Widyatama.png',
+      image: '/Logo-Widyatama.webp',
       links: [
         {
           title: 'View Certificate',
@@ -318,12 +331,13 @@ export const DATA = {
       ]
     },
         {
+      id: 'cert-national-uiux-design-seminar',
       title: 'National UI/UX Design Seminar',
       issuer: 'Widyatama University',
       dates: 'Feb 2026',
       description:
         'Participated in a national UI/UX seminar focused on modern design principles, user-centered design, and industry best practices to deepen understanding of effective digital products and user experiences, presented by speaker recognized for achievements in AWS UI/UX competitions.',
-      image: '/Logo-Universitas-Widyatama.png',
+      image: '/Logo-Universitas-Widyatama.webp',
       links: [
         {
           title: 'View Certificate',
@@ -334,6 +348,7 @@ export const DATA = {
     },
 
     {
+      id: 'cert-basic-javascript-hackerrank',
       title: 'Basic Javascript',
       issuer: 'HackerRank',
       dates: 'May 2026',
@@ -350,11 +365,10 @@ export const DATA = {
     },
   ],
   gallery: [
-    { image: '/gambar1.jpeg' },
-    { image: '/gambar2.jpeg' },
-    { image: '/gambar3.png' },
-    { image: '/gambar4.png' },
-    { image: '/gambar5.png' },
-    { image: '/gambar6.jpg' }
+    { image: '/gambar2.webp' },
+    { image: '/gambar3.webp' },
+    { image: '/gambar4.webp' },
+    { image: '/gambar5.webp' },
+    { image: '/gambar6.webp' }
   ]
 } as const

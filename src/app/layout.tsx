@@ -4,13 +4,20 @@ import { TooltipProvider } from '@/components/ui/tooltip'
 import { DATA } from '@/data/resume'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
-import { Inter as FontSans } from 'next/font/google'
+import { Archivo_Black as FontDisplay, Inter as FontSans } from 'next/font/google'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
+import { AdaptivePerformanceRoot } from '@/components/adaptive-performance-root'
 import './globals.css'
 
 const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans'
+})
+
+const fontDisplay = FontDisplay({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-display'
 })
 
 export const metadata: Metadata = {
@@ -73,17 +80,19 @@ export default function RootLayout ({
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased relative overflow-x-hidden',
-          fontSans.variable
+          fontSans.variable,
+          fontDisplay.variable
         )}
       >
         <ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
+          <AdaptivePerformanceRoot />
           {/* Background layers */}
           <GridBackground />
           <AmbientGlows />
           
           <TooltipProvider delayDuration={0}>
             <ScrollProgress />
-            <main className='relative w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-24'>
+            <main className='relative w-full'>
               {children}
             </main>
             <Navbar />

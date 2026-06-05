@@ -1,49 +1,48 @@
-'use client'
-
-import React, { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import { DATA } from '@/data/resume'
 import ProfileCardComponent from '@/components/ProfileCard'
-import { GraduationCapIcon, CalendarIcon } from 'lucide-react'
+import { Code2Icon, PenToolIcon } from 'lucide-react'
 
-// Animated Counter Component
-function AnimatedCounter ({
-  value,
-  duration = 2000
-}: {
-  value: number
-  duration?: number
-}) {
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    const startTime = Date.now()
-    const animate = () => {
-      const elapsed = Date.now() - startTime
-      const progress = Math.min(elapsed / duration, 1)
-      const eased = 1 - Math.pow(1 - progress, 3)
-      setCount(Math.floor(eased * value))
-
-      if (progress < 1) {
-        requestAnimationFrame(animate)
-      }
-    }
-    animate()
-  }, [value, duration])
-
-  return <span>{count}+</span>
-}
+const whyChooseMeHighlights = [
+  {
+    title: 'UI/UX Design',
+    icon: PenToolIcon,
+    description:
+      'Focused on creating modern, intuitive, and user-centered digital experiences through wireframes, prototypes, and design systems.'
+  },
+  {
+    title: 'Frontend Development',
+    icon: Code2Icon,
+    description:
+      'Experienced in building responsive and intuitive web interfaces while ensuring performance, usability, accessibility, and maintainable code.'
+  }
+]
 
 export function AboutSection () {
+  const stats = [
+    {
+      label: 'Projects',
+      value: DATA.projects.length,
+      className: 'from-lime-400 to-emerald-500'
+    },
+    {
+      label: 'Certificates',
+      value: DATA.certificates.length,
+      className: 'from-emerald-400 to-cyan-400'
+    },
+    {
+      label: 'Organisation',
+      value: DATA.experience.length,
+      className: 'from-lime-300 via-emerald-500 to-cyan-400'
+    }
+  ]
+
   return (
     <section
       id='about'
       className='flex justify-center py-24 px-4 sm:px-6 lg:px-8'
     >
       {/* Main Border Container */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+      <div
         className='w-full max-w-7xl overflow-hidden rounded-3xl border border-lime-300/20 bg-background/50 shadow-[0_0_60px_-28px_rgba(190,242,100,0.5)] backdrop-blur-xl'
       >
         {/* 2-Column Grid Layout */}
@@ -61,6 +60,10 @@ export function AboutSection () {
             {/* Description */}
             <div>
               <p className='text-lg leading-relaxed text-muted-foreground'>
+                <span className='font-semibold text-foreground'>
+                  {DATA.about0}
+                </span>
+                
                 {DATA.about}
                 <span className='font-semibold text-foreground'>
                   {' '}
@@ -70,82 +73,59 @@ export function AboutSection () {
               </p>
             </div>
 
-            {/* Education Only Column */}
             <div className='space-y-4'>
-              <h3 className='flex items-center gap-2 text-lg font-bold tracking-tight'>
-                <GraduationCapIcon className='size-5 text-lime-600 dark:text-lime-300' />
-                Education
-              </h3>
-
-              {DATA.education.map(edu => (
-                <div
-                  key={edu.school}
-                  className='flex flex-col gap-3 rounded-2xl border border-lime-300/15 bg-background/30 p-4 transition-colors duration-300 hover:border-lime-300/35 sm:flex-row sm:items-center sm:justify-between'
-                >
-                  {/* Kiri: Logo + Sekolah + Gelar */}
-                  <div className='flex items-start gap-3'>
-                    <img
-                      src={edu.logoUrl}
-                      alt={edu.school}
-                      className='size-8 shrink-0 rounded object-contain'
-                    />
-                    <div>
-                      <h4 className='text-sm font-semibold'>{edu.school}</h4>
-                      <p className='text-xs text-muted-foreground'>
-                        {edu.degree}
-                      </p>
+              <h3 className='text-xl font-bold tracking-tight'>Why Choose Me</h3>
+              <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
+                {whyChooseMeHighlights.map(({ title, description, icon: Icon }) => (
+                  <article
+                    key={title}
+                    className='rounded-2xl border border-border/50 bg-background/35 p-4 transition-colors duration-300 hover:border-lime-300/35'
+                  >
+                    <div className='mb-3 flex items-center gap-3'>
+                      <span className='flex size-10 shrink-0 items-center justify-center rounded-xl border border-lime-300/20 bg-lime-300/10 text-lime-600 dark:text-lime-300'>
+                        <Icon className='size-4' />
+                      </span>
+                      <h4 className='text-base font-bold'>{title}</h4>
                     </div>
-                  </div>
-
-                  {/* Kanan: Tahun/Periode */}
-                  <div className='flex items-center gap-1.5 whitespace-nowrap text-xs text-muted-foreground sm:ml-auto'>
-                    <CalendarIcon className='size-3' />
-                    <span>
-                      {edu.start} - {edu.end}
-                    </span>
-                  </div>
-                </div>
-              ))}
+                    <p className='text-sm leading-relaxed text-muted-foreground'>
+                      {description}
+                    </p>
+                  </article>
+                ))}
+              </div>
             </div>
 
             {/* Stats Row: Projects, Certificates, Experience */}
             <div className='grid grid-cols-3 gap-4'>
-              <div className='flex flex-col items-center justify-center rounded-2xl border border-border/50 bg-background/30 p-4 text-center'>
-                <span className='bg-gradient-to-r from-lime-400 to-emerald-500 bg-clip-text text-2xl font-bold text-transparent'>
-                  <AnimatedCounter value={DATA.projects.length} />
-                </span>
-                <span className='text-xs text-muted-foreground'>Projects</span>
-              </div>
-              <div className='flex flex-col items-center justify-center rounded-2xl border border-border/50 bg-background/30 p-4 text-center'>
-                <span className='bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-2xl font-bold text-transparent'>
-                  <AnimatedCounter value={DATA.certificates.length} />
-                </span>
-                <span className='text-xs text-muted-foreground'>
-                  Certificates
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center rounded-2xl border border-border/50 bg-background/30 p-4 text-center'>
-                <span className='bg-gradient-to-r from-lime-300 via-emerald-500 to-cyan-400 bg-clip-text text-2xl font-bold text-transparent'>
-                  <AnimatedCounter value={DATA.experience.length} />
-                </span>
-                <span className='text-xs text-muted-foreground'>
-                  Organisation
-                </span>
-              </div>
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className='flex flex-col items-center justify-center rounded-2xl border border-border/50 bg-background/30 p-4 text-center'
+                >
+                  <span
+                    className={`bg-gradient-to-r ${stat.className} bg-clip-text text-2xl font-bold text-transparent`}
+                  >
+                    {stat.value}+
+                  </span>
+                  <span className='text-xs text-muted-foreground'>
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Right Column - Profile Card */}
           <div className='flex items-center justify-center p-8 lg:p-12'>
             <ProfileCardComponent
-              avatarUrl='/me.png'
+              avatarUrl='/me.webp'
               handle={DATA.sosmed.instagram.username}
               status='Available'
               contactText='Contact Me'
             />
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   )
 }

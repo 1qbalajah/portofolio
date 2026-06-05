@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import React, { useCallback, useState } from "react";
+import { useAdaptivePerformance } from "@/hooks/use-adaptive-performance";
 
 interface ProfileCardProps {
   avatarUrl?: string;
@@ -28,9 +30,13 @@ export default function ProfileCard({
   const [isHovered, setIsHovered] = useState(false);
   const [transform, setTransform] = useState("rotateX(0deg) rotateY(0deg)");
   const [glow, setGlow] = useState({ x: 50, y: 50 });
+  const { isLiteMode, isMobile, prefersReducedMotion } = useAdaptivePerformance();
+  const shouldUseTilt = enableTilt && !isLiteMode && !isMobile && !prefersReducedMotion;
 
   const handlePointerMove = useCallback(
     (event: React.PointerEvent<HTMLDivElement>) => {
+      if (!shouldUseTilt) return;
+
       const rect = event.currentTarget.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
@@ -40,14 +46,12 @@ export default function ProfileCard({
         y: (y / rect.height) * 100,
       });
 
-      if (!enableTilt) return;
-
       const rotateY = (x / rect.width - 0.5) * 14;
       const rotateX = -(y / rect.height - 0.5) * 14;
 
       setTransform(`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
     },
-    [enableTilt],
+    [shouldUseTilt],
   );
 
   const handlePointerLeave = () => {
@@ -94,9 +98,12 @@ export default function ProfileCard({
         >
           <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/35 mix-blend-overlay" />
 
-          <img
+          <Image
             src={avatarUrl}
-            alt={`avatar`}
+            alt="avatar"
+            width={776}
+            height={1080}
+            sizes="(min-width: 1024px) 388px, 90vw"
             className="absolute inset-x-0 bottom-0 z-10 h-full w-full object-cover object-bottom opacity-100"
           />
 
@@ -120,9 +127,12 @@ export default function ProfileCard({
             <div className="absolute inset-x-5 bottom-5 z-40 flex items-center justify-between rounded-2xl border border-white/20 bg-white/20 px-4 py-3 shadow-[0_0_24px_rgba(255,255,255,0.12)] backdrop-blur-xl">
               <div className="flex min-w-0 items-center gap-3">
                 <div className="size-12 shrink-0 overflow-hidden rounded-full border border-white/20 bg-white/10">
-                  <img
+                  <Image
                     src={miniAvatarUrl || avatarUrl}
-                    alt={`mini avatar`}
+                    alt="mini avatar"
+                    width={48}
+                    height={48}
+                    sizes="48px"
                     className="h-full w-full object-cover"
                   />
                 </div>

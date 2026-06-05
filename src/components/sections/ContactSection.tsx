@@ -1,7 +1,3 @@
-"use client";
-
-import React from "react";
-import { motion } from "framer-motion";
 import BlurFade from "@/components/magicui/blur-fade";
 import { DATA } from "@/data/resume";
 import { GithubIcon, InstagramIcon, LinkedinIcon, MailIcon } from "lucide-react";
@@ -36,14 +32,10 @@ const socialLinks = [
 export function ContactSection() {
   return (
     <section id="contact" className="flex justify-center py-24 px-4 sm:px-6 lg:px-8">
-      {/* Main Border Container */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+      <div
         className="w-full max-w-7xl overflow-hidden rounded-3xl border border-border/50 bg-background/50 backdrop-blur-xl"
       >
         <div className="flex flex-col items-center justify-center gap-8 p-8 lg:p-12 text-center">
-          {/* Heading */}
           <div className="relative inline-block">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
               Connect With Me
@@ -51,12 +43,10 @@ export function ContactSection() {
             <span className="absolute -bottom-2 left-1/2 h-[4px] w-[40%] -translate-x-1/2 rounded-full bg-gradient-to-r from-lime-300 via-emerald-500 to-cyan-400 shadow-[0_0_18px_rgba(190,242,100,0.45)]" />
           </div>
 
-          {/* Description */}
           <p className="max-w-xl text-lg text-muted-foreground">
             Feel free to reach out through any of my social media platforms or send me an email. I would love to hear from you!
           </p>
 
-          {/* Social Links */}
           <BlurFade delay={0.1}>
             <div className="flex flex-wrap items-center justify-center gap-4">
               {socialLinks.map(({ label, href, icon: Icon, hoverClass }) => (
@@ -83,7 +73,6 @@ export function ContactSection() {
             </div>
           </BlurFade>
 
-          {/* Email */}
           <div className="mt-4">
             <a
               href={`mailto:${DATA.contact.email}`}
@@ -93,7 +82,7 @@ export function ContactSection() {
             </a>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
