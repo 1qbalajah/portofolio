@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import Image from "next/image";
 import React from "react";
 
 import BlurFade from "@/components/magicui/blur-fade";
@@ -13,11 +13,13 @@ type Skill = (typeof DATA.skills)[number];
 function SkillIcon({ skill }: { skill: Skill }) {
   if (typeof skill.icon === "string") {
     return (
-      <Image
+      <img
         src={skill.icon}
         alt={skill.name}
         width={56}
         height={56}
+        loading="lazy"
+        decoding="async"
         sizes="56px"
         className="size-12 object-contain transition-transform duration-300 group-hover:scale-110 sm:size-14"
       />
@@ -26,19 +28,23 @@ function SkillIcon({ skill }: { skill: Skill }) {
 
   return (
     <>
-      <Image
+      <img
         src={skill.icon.light}
         alt={skill.name}
         width={56}
         height={56}
+        loading="lazy"
+        decoding="async"
         sizes="56px"
         className="size-12 object-contain transition-transform duration-300 group-hover:scale-110 dark:hidden sm:size-14"
       />
-      <Image
+      <img
         src={skill.icon.dark}
         alt={skill.name}
         width={56}
         height={56}
+        loading="lazy"
+        decoding="async"
         sizes="56px"
         className="hidden size-12 object-contain transition-transform duration-300 group-hover:scale-110 dark:block sm:size-14"
       />
